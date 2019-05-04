@@ -1,0 +1,13 @@
+{
+  "name": "unbounce-static-hosting",
+  "version": "1.0.0",
+  "description": "Unbounce static assets",
+  "main": "index.js",
+  "repository": "https://github.com/sundaehq/unbounce-static-hosting.git",
+  "author": "Julian Frumar <julian@frumar.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
