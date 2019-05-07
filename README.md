@@ -28,3 +28,8 @@ yarn
 npm start
 ```
 and then access the root of dist at [http://localhost:8080/](). You can use this path in the script tag while developing the page in Unbounce.
+
+## TODO
+* Add automated unit test plan.
+* Add cross-browser test plan.
+* Add facility to develop locally based off of the Unbounce preview feature, while loading JS hosted in this repo.
