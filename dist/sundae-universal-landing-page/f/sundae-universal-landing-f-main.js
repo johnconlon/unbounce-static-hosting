@@ -1,3 +1,4 @@
+(function() {
 const componentForm = {
     street_number: 'short_name',
     route: 'long_name',
@@ -65,3 +66,4 @@ lp.jQuery(document).ready(function($) {
         $('html, body').animate({ scrollTop: $( $(this).attr('href') ).offset().top }, speed);
       });
    });
+})()
