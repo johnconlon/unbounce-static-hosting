@@ -31,7 +31,7 @@ var desktopFieldOrdering = [
   'lp-pom-button-168'
 ];
 desktopFieldOrdering.forEach(function(fieldId, i) {
-  $("[id=" + fieldId + "]").attr('tabindex', i + 1);
+  return $("[id=" + fieldId + "]").attr('tabindex', i + 1);
 });
 
 // These IDs reflect the placeholder ID number
@@ -47,7 +47,9 @@ var boxes = [
     244, // phone
     241, // zip
     245, // email
-  ].map(id => "#lp-pom-box-"+id);
+  ].map(function(id) {
+    return "#lp-pom-box-"+id;
+  });
 
 function setFlexibleFormFieldSize() {
   if ($(window).width() > 600) {

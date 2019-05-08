@@ -26,7 +26,7 @@
         // (also keeps everything floating-cta related here).
         $floatingBar.css("position", "fixed");
         $floatingBar.css("display", "none");
-        $floatingBar.css("top", "unset");
+        $floatingBar.css("top", "auto");
         $floatingBar.css("bottom", "0px");
         $floatingBar.css("width", "100%");
         $floatingCta.css("left", "50%");

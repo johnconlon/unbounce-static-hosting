@@ -10,15 +10,15 @@
     var triggerElementId = "#lp-pom-block-65";
     
     // ID of the floating box and button to show/hide.
-    var floatingCtaId = "#lp-pom-button-254"
-    var floatingBarId = "#lp-pom-box-257"
+    var floatingCtaId = "#lp-pom-button-254";
+    var floatingBarId = "#lp-pom-box-257";
     
     lp.jQuery(document).ready(function($) {
         var isShowingFloatingCta = false;
         var $triggerElement = $(triggerElementId);
         var triggerScrollTop = $triggerElement.offset().top + ($triggerElement.height() / 2);
         var $floatingCta = $(floatingCtaId);
-        var $floatingBar = $(floatingBarId)
+        var $floatingBar = $(floatingBarId);
         
         // Dealing with unbounce styling...everything is positioned absolute and its
         // not possible to set a percentage width on the containing box from the
@@ -26,7 +26,7 @@
         // (also keeps everything floating-cta related here).
         $floatingBar.css("position", "fixed");
         $floatingBar.css("display", "none");
-        $floatingBar.css("top", "unset");
+        $floatingBar.css("top", "auto");
         $floatingBar.css("bottom", "0px");
         $floatingBar.css("width", "100%");
         $floatingCta.css("left", "50%");
@@ -44,12 +44,12 @@
         }, 50))
       
         function showFloatingCta() {
-            $floatingBar.fadeIn();
+          $floatingBar.fadeIn();
           isShowingFloatingCta = true;
         }
         
         function hideFloatingCta() {
-            $floatingBar.fadeOut();
+          $floatingBar.fadeOut();
           isShowingFloatingCta = false;
         }
     });

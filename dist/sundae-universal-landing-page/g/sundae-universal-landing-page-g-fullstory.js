@@ -6,7 +6,7 @@ function bindSetFullStoryVars() {
       var lastName  = $('#last_name').val();
       if (typeof FS != "undefined") {
         FS.setUserVars({
-          displayName: `${firstName} ${lastName}`,
+          displayName: "" + firstName + " " + lastName
          });
       }
     });
