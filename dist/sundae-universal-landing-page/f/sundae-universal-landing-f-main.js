@@ -5,9 +5,9 @@ const componentForm = {
     administrative_area_level_1: 'long_name',
     country: 'long_name',
     postal_code: 'short_name'
-   };
+};
    
-   lp.jQuery(document).ready(function($) {
+lp.jQuery(document).ready(function($) {
     // Generate a GUID that we'll use to identify this lead in Salesforce for step 2 (contact info).
     // We'll use a Zap to locate the newly created lead in order to update it with the contact info in
     // the second page which is a different form altogether.
@@ -15,13 +15,13 @@ const componentForm = {
     const guid = uuidv4();
     const guidParts = guid.split('-');
     $('#unbounce_guid').val(guid);
-    $('#last_name').val(`placeholder-${guidParts[0]}-${guidParts[1]}`);
-    $('#first_name').val(`placeholder-${guidParts[1]}-${guidParts[2]}`);
-    $('#email').val(`placeholder-${guidParts[1]}@${guidParts[0]}.com`);
+    $('#last_name').val(["placeholder", guidParts[0], guidParts[1]].join("-"));
+    $('#first_name').val(["placeholder", guidParts[1], guidParts[2]].join("-"));
+    $('#email').val(["placeholder-", guidParts[1], "@", guidParts[0], ".com"].join(""));
    
    
     // Setup autocomplete for any forms on the page
-    $('form').each((i, form) => {
+    $('form').each(function(i, form) {
       const addressField = form.autocomplete_address;
       const autocomplete = new google.maps.places.Autocomplete(addressField, {
         types: ['geocode'],
@@ -30,10 +30,10 @@ const componentForm = {
       // get address components
       const addresses = {};
    
-      autocomplete.addListener('place_changed', () => {
+      autocomplete.addListener('place_changed', function() {
         const place = autocomplete.getPlace();
    
-        place.address_components.forEach((component) => {
+        place.address_components.forEach(function(component) {
           const type = component.types[0];
           addresses[type] = component[componentForm[type]] || "";
         });
@@ -54,7 +54,7 @@ const componentForm = {
    // smooth scrolling
    lp.jQuery(function($) {
     // The speed of the scroll in milliseconds
-    var speed = 500;
+    var speed = 400;
    
     // Find links that are #anchors and scroll to them
     $('a[href^=#]')
