@@ -1,8 +1,9 @@
+(function() {
 // Tell FullStory the user's name once they enter something
 function bindSetFullStoryVars() {
     $('input[name*="_name"]').live('change', function() {
-      const firstName = $('#first_name').val();
-      const lastName  = $('#last_name').val();
+      var firstName = $('#first_name').val();
+      var lastName  = $('#last_name').val();
       if (typeof FS != "undefined") {
         FS.setUserVars({
           displayName: `${firstName} ${lastName}`,
@@ -21,3 +22,5 @@ function bindSetFullStoryVars() {
   lp.jQuery(document).ready(function($) {
     bindSetFullStoryVars();
   });
+
+})()

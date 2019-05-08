@@ -1,3 +1,4 @@
+(function() {
 var QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you/';
 var NON_QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you-nql/';
 
@@ -88,3 +89,4 @@ lp.jQuery(document).ready(function($) {
   bindFormRedirectOnSubmit();
 });
 window.addEventListener("resize", setFlexibleFormFieldSize);
+})()
