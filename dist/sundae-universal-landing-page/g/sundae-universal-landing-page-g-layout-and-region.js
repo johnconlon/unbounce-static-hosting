@@ -30,7 +30,7 @@ var desktopFieldOrdering = [
   'email',
   'lp-pom-button-168'
 ];
-desktopFieldOrdering.forEach((fieldId, i) => {
+desktopFieldOrdering.forEach(function(fieldId, i) {
   $("[id=" + fieldId + "]").attr('tabindex', i + 1);
 });
 
