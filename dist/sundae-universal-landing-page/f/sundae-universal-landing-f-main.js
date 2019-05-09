@@ -16,10 +16,6 @@ lp.jQuery(document).ready(function($) {
     const guid = uuidv4();
     const guidParts = guid.split('-');
     $('#unbounce_guid').val(guid);
-    $('#last_name').val(["placeholder", guidParts[0], guidParts[1]].join("-"));
-    $('#first_name').val(["placeholder", guidParts[1], guidParts[2]].join("-"));
-    $('#email').val(["placeholder-", guidParts[1], "@", guidParts[0], ".com"].join(""));
-   
    
     // Setup autocomplete for any forms on the page
     $('form').each(function(i, form) {
