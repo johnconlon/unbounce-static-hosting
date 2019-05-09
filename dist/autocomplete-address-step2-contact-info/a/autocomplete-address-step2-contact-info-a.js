@@ -1,3 +1,4 @@
+(function() {
 const QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you/';
 const NON_QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you-nql/';
 
@@ -20,7 +21,7 @@ function bindFormRedirectOnSubmit() {
 // smooth scrolling
 lp.jQuery(function ($) {
   // The speed of the scroll in milliseconds
-  var speed = 500;
+  var speed = 400;
 
   // Find links that are #anchors and scroll to them
   $('a[href^=#]')
@@ -35,3 +36,4 @@ lp.jQuery(function ($) {
 lp.jQuery(document).ready(function ($) {
   bindFormRedirectOnSubmit();
 });
+})()
