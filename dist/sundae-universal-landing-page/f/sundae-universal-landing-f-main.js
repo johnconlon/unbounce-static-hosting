@@ -29,7 +29,12 @@ lp.jQuery(document).ready(function($) {
    
       autocomplete.addListener('place_changed', function() {
         const place = autocomplete.getPlace();
-   
+
+        if (!Array.isArray(place.address_components)) {
+          console.warn('place.address_components is not an Array. Will not process autosuggested address.');
+          return;
+        }
+    
         place.address_components.forEach(function(component) {
           const type = component.types[0];
           addresses[type] = component[componentForm[type]] || "";
