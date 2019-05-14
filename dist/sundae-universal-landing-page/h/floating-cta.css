@@ -55,27 +55,28 @@
 
   #lp-pom-form-251.floating #container_autocomplete_address {
     position: relative;
-    top: initial;
-    left: initial;
+    top: auto;
+    left: auto;
   }
 
   #lp-pom-form-251.floating #autocomplete_address {
     position: relative;
-    top: initial;
-    left: initial;
+    top: auto;
+    left: auto;
     border: 0;
   }
 
   #lp-pom-form-251.floating #lp-pom-button-252 {
     position: relative;
-    top: initial;
-    left: initial;
+    top: auto;
+    left: auto;
     margin: 5px;
   }
 
   #lp-pom-form-251.floating #lp-pom-button-252 span {
     position: relative;
     margin: 0;
+    top: auto;
   }
 }
 
@@ -107,15 +108,15 @@
 
   #lp-pom-form-251.floating #container_autocomplete_address {
     position: relative;
-    top: initial;
-    left: initial;
+    top: auto;
+    left: auto;
     width: 100%;
   }
 
   #lp-pom-form-251.floating #autocomplete_address {
     position: relative;
-    top: initial;
-    left: initial;
+    top: auto;
+    left: auto;
     border: 0;
     font-size: 16px;
     padding-right: 105px;
@@ -126,7 +127,7 @@
     position: absolute;
     top: 2px;
     right: 2px;
-    left: initial;
+    left: auto;
     width: auto;
   }
 
