@@ -1,0 +1,142 @@
+/* 
+ * Fade-in animation
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 
+ * Desktop Floating CTA
+ */
+@media screen and (min-width: 600px) {
+  #lp-pom-form-251.floating {
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  #lp-pom-form-251.floating form {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+  }
+
+  #lp-pom-form-251.floating form .fields {
+    margin: 0;
+  }
+
+  #lp-pom-form-251.floating #container_autocomplete_address {
+    position: relative;
+    top: initial;
+    left: initial;
+  }
+
+  #lp-pom-form-251.floating #autocomplete_address {
+    position: relative;
+    top: initial;
+    left: initial;
+    border: 0;
+  }
+
+  #lp-pom-form-251.floating #lp-pom-button-252 {
+    position: relative;
+    top: initial;
+    left: initial;
+    margin: 5px;
+  }
+
+  #lp-pom-form-251.floating #lp-pom-button-252 span {
+    position: relative;
+    margin: 0;
+  }
+}
+
+/* 
+ * Mobile Floating CTA
+ */
+@media screen and (max-width: 599px) {
+  #lp-pom-form-251.floating {
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  #lp-pom-form-251.floating form {
+    width: 100%;
+  }
+
+  #lp-pom-form-251.floating form .fields {
+    margin: 0;
+    width: 100%;
+  }
+
+  #lp-pom-form-251.floating #container_autocomplete_address {
+    position: relative;
+    top: initial;
+    left: initial;
+    width: 100%;
+  }
+
+  #lp-pom-form-251.floating #autocomplete_address {
+    position: relative;
+    top: initial;
+    left: initial;
+    border: 0;
+    font-size: 16px;
+    padding-right: 105px;
+    width: 100%;
+  }
+
+  #lp-pom-form-251.floating #lp-pom-button-252 {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    left: initial;
+    width: auto;
+  }
+
+  #lp-pom-form-251.floating #lp-pom-button-252::before {
+    content: "GET OFFER";
+    font-size: 14px;
+    padding: 0 8px;
+  }
+
+  #lp-pom-form-251.floating #lp-pom-button-252 span {
+    display: none;
+  }
+}
