@@ -1,0 +1,56 @@
+<div class="ContentContainer">
+  <div class="FormContainer">
+    <h1 class="FormContainer-question">
+      Tell us about your role at the company.
+    </h1>
+    <form class="Form FormContainer-form">
+      <div class="Form-radioGroup">
+        <div class="Form-radio">
+          <input
+            type="radio"
+            name="role"
+            value="Company Owner"
+            id="company_owner"
+          />
+          <label for="company_owner">Company Owner</label>
+        </div>
+        <div class="Form-radio">
+          <input
+            type="radio"
+            name="role"
+            value="Property Manager"
+            id="property_manager"
+          />
+          <label for="property_manager">Property Manager</label>
+        </div>
+        <div class="Form-radio">
+          <input
+            type="radio"
+            name="role"
+            value="Transaction Coordinator"
+            id="transaction_coordinator"
+          />
+          <label for="transaction_coordinator">Transaction Coordinator</label>
+        </div>
+        <div class="Form-radio">
+          <input type="radio" name="role" value="Other" id="other" />
+          <label for="other">Other</label>
+        </div>
+      </div>
+      <div class="Form-otherField hide">
+        <input
+          class="OtherNotes Input"
+          type="text"
+          id="other_notes"
+          placeholder="What is your role?"
+        />
+      </div>
+      <div class="Form-nav">
+        <div class="Form-back BackButton TextButton">&lt; Back</div>
+        <button type="submit" class="Form-submit SubmitButton Button">
+          Next
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
