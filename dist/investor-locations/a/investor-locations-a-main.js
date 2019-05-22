@@ -20,7 +20,7 @@
 
   // Init the form
   function initForm() {
-    var $unbounceForm = $("lp-pom-form form");
+    var $unbounceForm = $(".lp-pom-form form");
     var $dynamicForm = $("#dynamic-root form");
     var $addLocation = $dynamicForm.find(".AddLocation-button");
     var $backButton = $dynamicForm.find(".BackButton");
@@ -48,7 +48,7 @@
     // Connect the visible form fields with the hidden unbounce form fields
     // so we can submit the entire unbounce form.
     function connectFields() {
-      $dynamicInputs = $dynamicForm.find("input");
+      $dynamicInputs = $dynamicForm.find("input[type=text]");
       $dynamicInputs.each(function(index, input) {
         var $input = $(input);
         var $unbounceInput = $("#" + $input.attr("name"));
