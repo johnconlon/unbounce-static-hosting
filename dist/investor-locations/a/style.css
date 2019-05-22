@@ -13,132 +13,289 @@
   display: none;
 }
 
-.ContentContainer {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 15px;
+@media only screen and (min-width: 601px) {
+  .ContentContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 15px;
+  }
+
+  .FormContainer {
+    width: 450px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .FormContainer-question {
+    font-size: 16px;
+  }
+
+  .FormContainer-form {
+    margin-top: 35px;
+  }
+
+  .Form-fieldGroup {
+    margin-top: 25px;
+  }
+
+  .Form-fieldGroup:first-child {
+    margin-top: 0;
+  }
+
+  .Form-label {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .Form-fieldGroupFields {
+    display: flex;
+  }
+
+  .Form-input {
+    flex: 1;
+  }
+
+  .Form-input:first-child {
+    margin-right: 15px;
+  }
+
+  .Input {
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 11px 8px;
+  }
+
+  .Select {
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 11px 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e9e9e9;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .AddLocation {
+    margin-top: 25px;
+  }
+
+  .AddLocation-button {
+    cursor: pointer;
+  }
+
+  .AddLocation-button:hover .AddLocation-icon {
+    background: rgba(16, 59, 143, 1);
+  }
+
+  .AddLocation-button:hover .AddLocation-text {
+    color: rgba(16, 59, 143, 1);
+  }
+
+  .AddLocation-icon {
+    font-size: 1em;
+    line-height: 1.3em;
+    width: 1.3em;
+    height: 1.3em;
+    background: rgba(21, 71, 150, 1);
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .AddLocation-text {
+    color: rgba(21, 71, 150, 1);
+  }
+
+  .Form-nav {
+    display: flex;
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+    align-items: center;
+    padding-top: 15px;
+  }
+
+  .Form-submit {
+    display: block;
+    margin-left: auto;
+  }
+
+  .Form-back {
+  }
+
+  .Button {
+    display: block;
+    border-style: none;
+    border-radius: 5px;
+    background: rgba(21, 71, 150, 1);
+    box-shadow: none;
+    text-shadow: none;
+    color: #fff;
+    font-family: Lato;
+    font-style: normal;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 8px;
+  }
+
+  .Button:hover {
+    background: rgba(16, 59, 143, 1);
+    box-shadow: none;
+    color: #fff;
+  }
+
+  .SubmitButton {
+    padding: 12px 80px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+  }
+
+  .TextButton {
+    cursor: pointer;
+  }
+
+  .BackButton {
+    color: #999;
+    font-size: 14px;
+  }
 }
 
-.FormContainer {
-  width: 450px;
-  margin: 35px auto 0;
-  display: flex;
-  flex-direction: column;
-}
+@media only screen and (max-width: 600px) {
+  .ContentContainer {
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+  }
 
-.FormContainer-question {
-  font-size: 16px;
-}
+  .FormContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
 
-.FormContainer-form {
-  margin-top: 35px;
-}
+  .FormContainer-question {
+    font-size: 16px;
+  }
 
-.Form {
-}
+  .FormContainer-form {
+    margin-top: 35px;
+  }
 
-.Form-fieldGroup {
-  margin-top: 25px;
-}
+  .Form {
+  }
 
-.Form-fieldGroup:first-child {
-  margin-top: 0;
-}
+  .Form-fieldGroup {
+    margin-top: 25px;
+  }
 
-.Form-label {
-  margin-bottom: 10px;
-  display: block;
-}
+  .Form-fieldGroup:first-child {
+    margin-top: 0;
+  }
 
-.Form-row {
-  display: flex;
-}
+  .Form-label {
+    margin-bottom: 10px;
+    display: block;
+  }
 
-.Form-input {
-  flex: 1;
-}
+  .Form-fieldGroupFields {
+  }
 
-.Form-input:first-child {
-  margin-right: 15px;
-}
+  .Form-input {
+    width: 100%;
+  }
 
-.Input {
-  border-radius: 5px;
-  border: 1px solid #eaeaea;
-  font-size: 16px;
-  line-height: 18px;
-  padding: 10px 11px 8px;
-}
+  .Form-input:first-child {
+    margin-bottom: 5px;
+  }
 
-.Select {
-  border-radius: 5px;
-  border: 1px solid #eaeaea;
-  font-size: 16px;
-  line-height: 18px;
-  padding: 10px 11px 8px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #e9e9e9;
-  box-shadow: none;
-  outline: none;
-}
+  .Input {
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 11px 8px;
+  }
 
-.AddLocation {
-  margin-top: 25px;
-}
+  .Select {
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 11px 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e9e9e9;
+    box-shadow: none;
+    outline: none;
+    height: 2.5em;
+  }
 
-.AddLocation-button {
-  cursor: pointer;
-}
+  .AddLocation {
+    margin-top: 25px;
+  }
 
-.AddLocation-button:hover .AddLocation-icon {
-  background: rgba(16, 59, 143, 1);
-}
+  .AddLocation-button {
+    cursor: pointer;
+  }
 
-.AddLocation-button:hover .AddLocation-text {
-  color: rgba(16, 59, 143, 1);
-}
+  .AddLocation-button:hover .AddLocation-icon {
+    background: rgba(16, 59, 143, 1);
+  }
 
-.AddLocation-icon {
-  font-size: 1em;
-  line-height: 1.3em;
-  width: 1.3em;
-  height: 1.3em;
-  background: rgba(21, 71, 150, 1);
-  color: #fff;
-  border-radius: 50%;
-  margin-right: 5px;
-  display: inline-block;
-  text-align: center;
-}
+  .AddLocation-button:hover .AddLocation-text {
+    color: rgba(16, 59, 143, 1);
+  }
 
-.AddLocation-icon:hover {
-}
+  .AddLocation-icon {
+    font-size: 1em;
+    line-height: 1.3em;
+    width: 1.3em;
+    height: 1.3em;
+    background: rgba(21, 71, 150, 1);
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+    text-align: center;
+  }
 
-.AddLocation-text {
-  color: rgba(21, 71, 150, 1);
-}
+  .AddLocation-icon:hover {
+  }
 
-.AddLocation-text:hover {
-  color: rgba(16, 59, 143, 1);
-}
+  .AddLocation-text {
+    color: rgba(21, 71, 150, 1);
+  }
 
-.Form-nav {
-  display: flex;
-  border-top: 1px solid #eaeaea;
-  margin-top: 40px;
-  align-items: center;
-  padding-top: 15px;
-}
+  .AddLocation-text:hover {
+    color: rgba(16, 59, 143, 1);
+  }
 
-.Form-submit {
-  display: block;
-  margin-left: auto;
-}
+  .Form-nav {
+    display: flex;
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+    align-items: center;
+    padding-top: 15px;
+  }
 
-.Form-back {
+  .Form-submit {
+    display: block;
+    margin-left: auto;
+  }
+
+  .Form-back {
+  }
 }
 
 .Button {
