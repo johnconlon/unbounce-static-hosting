@@ -22,10 +22,12 @@
     var $unbounceForm = $("lp-pom-form form");
     var $dynamicForm = $("#dynamic-root form");
     var $addLocation = $dynamicForm.find(".AddLocation-button");
+    var $backButton = $dynamicForm.find(".BackButton");
     var $hiddenFieldGroups = $dynamicForm.find(".Form-fieldGroup.hidden");
 
     connectFields();
     $addLocation.click(addLocation);
+    $backButton.click(goBack);
     $dynamicForm.submit(onSubmit);
 
     // Add a location field group when "Add location" is clicked.
@@ -72,6 +74,10 @@
     function onSubmit(event) {
       event.preventDefault();
       $unbounceForm.submit();
+    }
+
+    function goBack() {
+      window.history.back();
     }
   }
 })();
