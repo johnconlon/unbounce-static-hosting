@@ -37,6 +37,14 @@
     font-size: 16px;
   }
 
+  .Form-fieldGroup {
+    margin-top: 20px;
+  }
+
+  .Form-fieldGroup:first-child {
+    margin-top: 0;
+  }
+
   .FormContainer-form {
     margin-top: 35px;
   }
@@ -60,6 +68,9 @@
 
   .Form-radio input {
     margin-right: 10px;
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    appearance: radio;
   }
 
   .Form-radio label {
@@ -93,39 +104,6 @@
     border-color: #e9e9e9;
     box-shadow: none;
     outline: none;
-  }
-
-  .AddLocation {
-    margin-top: 25px;
-  }
-
-  .AddLocation-button {
-    cursor: pointer;
-  }
-
-  .AddLocation-button:hover .AddLocation-icon {
-    background: rgba(16, 59, 143, 1);
-  }
-
-  .AddLocation-button:hover .AddLocation-text {
-    color: rgba(16, 59, 143, 1);
-  }
-
-  .AddLocation-icon {
-    font-size: 1em;
-    line-height: 1.3em;
-    width: 1.3em;
-    height: 1.3em;
-    background: rgba(21, 71, 150, 1);
-    color: #fff;
-    border-radius: 50%;
-    margin-right: 5px;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .AddLocation-text {
-    color: rgba(21, 71, 150, 1);
   }
 
   .Form-nav {
@@ -204,6 +182,14 @@
     margin-top: 35px;
   }
 
+  .Form-fieldGroup {
+    margin-top: 20px;
+  }
+
+  .Form-fieldGroup:first-child {
+    margin-top: 0;
+  }
+
   .Form-otherField {
     margin-top: 10px;
   }
@@ -223,9 +209,6 @@
 
   .Form-radio input {
     margin-right: 10px;
-    -webkit-appearance: radio;
-    -moz-appearance: radio;
-    appearance: radio;
   }
 
   .Form-radio label {
