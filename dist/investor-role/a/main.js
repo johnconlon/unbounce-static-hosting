@@ -53,9 +53,9 @@
     // so we can submit the entire unbounce form.
     function syncValues() {
       // Must fetch this again, the $radioGroup value will be stale.
-      radioGroupValue = $dynamicForm.find("input[type=radio][name=role]").val();
-      var $unbounceRadio = $unbounceForm.find("input[type=radio]");
-      $unbounceRadio.val(radioGroupValue);
+      radioGroupValue = $dynamicForm.find("input[type=radio][name=role]:checked").val();
+      var $unbounceRadio = $unbounceForm.find("input[type=radio][value='" + radioGroupValue + "'");
+      $unbounceRadio.attr('checked', true)
 
       var $unbounceOtherNotes = $unbounceForm.find("input[type=text]");
       $unbounceOtherNotes.val($otherNotes.val());
