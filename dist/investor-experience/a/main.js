@@ -21,7 +21,7 @@
 
   // Init the form
   function initForm() {
-    var $unbounceForm = $("lp-pom-form form");
+    var $unbounceForm = $(".lp-pom-form form");
     var $dynamicForm = $("#dynamic-root form");
     var $backButton = $dynamicForm.find(".BackButton");
 
