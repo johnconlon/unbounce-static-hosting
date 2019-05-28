@@ -41,7 +41,7 @@
       var $dynamicFields = $dynamicForm.find("input");
       $dynamicFields.each(function(index, input) {
         var $input = $(input);
-        var $unbounceInput = $("#unbounce-" + $input.attr("name"));
+        var $unbounceInput = $("#unbounce_" + $input.attr("name"));
         $unbounceInput.val($input.val());
       });
     }
