@@ -60,6 +60,9 @@
 
   .Form-radio input {
     margin-right: 10px;
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    appearance: radio;
   }
 
   .Form-radio label {
@@ -223,9 +226,6 @@
 
   .Form-radio input {
     margin-right: 10px;
-    -webkit-appearance: radio;
-    -moz-appearance: radio;
-    appearance: radio;
   }
 
   .Form-radio label {

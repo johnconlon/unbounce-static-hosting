@@ -1,8 +1,9 @@
 (function() {
   // Load the HTML
   var formHtmlUrl =
-    "https://sundaehq.github.io/unbounce-static-hosting/dist/investor-role/a/form.html";
+    "https://sundaehq.github.io/unbounce-static-hosting/dist/investor-activity/a/form.html";
   var containerId = "#dynamic-root";
+
   lp.jQuery(document).ready(function($) {
     var $container = $(containerId);
     $.get(formHtmlUrl, function(data) {
@@ -23,14 +24,13 @@
     var $unbounceForm = $("lp-pom-form form");
     var $dynamicForm = $("#dynamic-root form");
     var $backButton = $dynamicForm.find(".BackButton");
-    var $radioGroup = $dynamicForm.find("input[type=radio][name=role]");
+    var $radioGroup = $dynamicForm.find("input[type=radio][name=activity]");
     var $otherNotes = $("#other_notes");
 
     $backButton.click(goBack);
     $dynamicForm.submit(onSubmit);
     $radioGroup.change(toggleOtherNotes);
 
-    // Add a location field group when "Add location" is clicked.
     function toggleOtherNotes() {
       if ($(this).val() == "Other") {
         $otherNotes.parent().removeClass("hide");
@@ -53,7 +53,9 @@
     // so we can submit the entire unbounce form.
     function syncValues() {
       // Must fetch this again, the $radioGroup value will be stale.
-      radioGroupValue = $dynamicForm.find("input[type=radio][name=role]").val();
+      radioGroupValue = $dynamicForm
+        .find("input[type=radio][name=activity]")
+        .val();
       var $unbounceRadio = $unbounceForm.find("input[type=radio]");
       $unbounceRadio.val(radioGroupValue);
 
