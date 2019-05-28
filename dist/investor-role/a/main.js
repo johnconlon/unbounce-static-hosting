@@ -55,7 +55,7 @@
       // Must fetch this again, the $radioGroup value will be stale.
       radioGroupValue = $dynamicForm.find("input[type=radio][name=role]:checked").val();
       var $unbounceRadio = $unbounceForm.find("input[type=radio]")
-      $unbounceRadio.filter("[value='" + radioGroupValue + "'").attr("checked", true);
+      $unbounceRadio.filter("[value='" + radioGroupValue + "']").attr("checked", true);
 
       var $unbounceOtherNotes = $unbounceForm.find("input[type=text]");
       $unbounceOtherNotes.val($otherNotes.val());
