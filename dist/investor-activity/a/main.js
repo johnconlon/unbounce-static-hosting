@@ -1,6 +1,7 @@
 (function() {
   // Load the HTML
-  var formHtmlUrl = "http://localhost:8080/dist/investor-activity/a/form.html";
+  var formHtmlUrl =
+    "https://sundaehq.github.io/unbounce-static-hosting/dist/investor-activity/a/form.html";
   var containerId = "#dynamic-root";
 
   lp.jQuery(document).ready(function($) {
