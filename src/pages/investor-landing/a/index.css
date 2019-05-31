@@ -1,0 +1,12 @@
+@import "sundaelib/css/theme.css";
+@import "./foo.css";
+
+.Test {
+  color: var(--colorInvestorBlue);
+}
+
+@media (--sm-viewport) {
+  .Test {
+    color: var(--colorLightGray);
+  }
+}

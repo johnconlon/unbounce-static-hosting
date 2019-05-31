@@ -1,0 +1,27 @@
+/**
+ * Breakpoints
+ * Copy Unbounce for now
+ */
+@custom-media --sm-viewport (max-width:600px);
+@custom-media --lg-viewport (min-width:600px);
+:root {
+  --colorLightGray: #9e9e9e;
+  --colorDarkGray: #4c4c4c;
+  --colorInvestorBlue: #154796;
+  --colorDarkInvestorBlue: rgb(21, 92, 204);
+}
+.Foo {
+  color: #4c4c4c;
+  color: var(--colorDarkGray);
+}
+.Test {
+  color: #154796;
+  color: var(--colorInvestorBlue);
+}
+@media (--sm-viewport) {
+  .Test {
+    color: #9e9e9e;
+    color: var(--colorLightGray);
+  }
+}
+
