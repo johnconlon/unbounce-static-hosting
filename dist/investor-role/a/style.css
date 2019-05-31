@@ -3,6 +3,7 @@
   height: 100%;
   position: relative;
   box-sizing: border-box;
+  font-family: Lato, sans-serif;
 }
 
 #dynamic-root * {

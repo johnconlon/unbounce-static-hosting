@@ -3,6 +3,7 @@
   height: 100%;
   position: relative;
   box-sizing: border-box;
+  font-family: Lato, sans-serif;
 }
 
 #dynamic-root * {
@@ -229,6 +230,8 @@
     font-size: 16px;
     line-height: 18px;
     padding: 10px 11px 8px;
+    width: 50%;
+    min-width: 100px;
   }
 
   .Select {
