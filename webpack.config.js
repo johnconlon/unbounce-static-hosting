@@ -30,6 +30,10 @@ const shared = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: ["file-loader?name=[name].[ext]", "extract-loader", "html-loader"]
+      },
+      {
         test: /\.tsx?/,
         use: "ts-loader",
         exclude: /node_modules/
