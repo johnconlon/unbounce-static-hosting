@@ -1,5 +1,4 @@
 @import "sundaelib/css/theme.css";
-@import "./foo.css";
 
 .Test {
   color: var(--colorInvestorBlue);
