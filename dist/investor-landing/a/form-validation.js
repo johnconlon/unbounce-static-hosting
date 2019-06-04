@@ -1,6 +1,6 @@
 (function() {
-  lp.jQuery(document).read(function($) {
-    var tosInput = document.getElementById("terms_and_conditions")
+  lp.jQuery(document).ready(function($) {
+    var tosInput = $("input[name=terms_and_conditions]")[0]
     setCustomValidity(tosInput, "Please agree to terms in order to join our investor list")
   })
 
