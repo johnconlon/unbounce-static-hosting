@@ -1,9 +1,12 @@
 (function() {
   var formContainerId = "#lp-pom-form-251";
   var buttonId = "#lp-pom-button-252";
+  var pacContainer = ".pac-container";
+  var overrideClass = "pac-container-override";
 
   lp.jQuery(document).ready(function($) {
     var $formElement = $(formContainerId);
+
     var $button = $(buttonId);
     var scrollTopTrigger = $button.offset().top + $button.height();
 
@@ -13,8 +16,10 @@
       throttle(function() {
         if ($doc.scrollTop() > scrollTopTrigger) {
           $formElement.addClass("floating");
+          $(pacContainer).addClass(overrideClass)
         } else {
           $formElement.removeClass("floating");
+          $(pacContainer).removeClass(overrideClass)
         }
       }, 50)
     );
