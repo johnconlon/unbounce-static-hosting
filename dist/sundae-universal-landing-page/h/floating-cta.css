@@ -128,6 +128,7 @@
   #lp-pom-form-251.floating form .fields {
     margin: 0;
     width: 100%;
+    height: 100%;
   }
 
   #lp-pom-form-251.floating #container_autocomplete_address {
@@ -142,7 +143,7 @@
     position: absolute;
     top: 0px;
     left: auto;
-    bottom: 4px
+    bottom: 4px;
     border: 0;
     font-size: 16px;
     padding-right: 105px;
