@@ -30,13 +30,14 @@
     animation-name: fadeIn;
     animation-duration: 0.4s;
     position: fixed;
+    top: auto;
     bottom: 0;
     left: 0;
     z-index: 50;
     width: 100%;
     height: auto;
     background-color: #fff;
-    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -88,13 +89,14 @@
     animation-name: fadeIn;
     animation-duration: 0.4s;
     position: fixed;
+    top: auto;
     bottom: 0;
     left: 0;
     z-index: 50;
     width: 100%;
     height: auto;
     background-color: #fff;
-    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
   }
 
   #lp-pom-form-251.floating form {
