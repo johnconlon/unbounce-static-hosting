@@ -1,6 +1,6 @@
-import "./index.css";
-import "./index.html";
+import './index.css';
+import './index.html';
 
-import Foo from "sundaelib/js/foo";
+import Foo from '../../../node_modules/sundaelib/js/foo';
 
 Foo();

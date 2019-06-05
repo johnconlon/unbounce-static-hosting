@@ -1,7 +1,9 @@
 {
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "module": "es6",
-        "target": "es5"
-    }
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  }
 }
