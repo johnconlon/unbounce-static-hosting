@@ -5,7 +5,7 @@
     locality: "long_name",
     administrative_area_level_1: "long_name",
     country: "long_name",
-    postal_code: "short_name"
+    postal_code: "short_name",
   };
 
   lp.jQuery(document).ready(function($) {
@@ -14,14 +14,20 @@
     // the second page which is a different form altogether.
     // Salesforce also requires that we set a lastname value, so we'll use it as a placeholder too
     const guid = uuidv4();
-    const guidParts = guid.split("-");
     $("#unbounce_guid").val(guid);
+
+    // Hack
+    var viewportWidth =
+      window.innerWidth || document.documentElement.clientWidth;
+    if (viewportWidth < 600) {
+      return;
+    }
 
     // Setup autocomplete for any forms on the page
     $("form").each(function(i, form) {
       const addressField = form.autocomplete_address;
       const autocomplete = new google.maps.places.Autocomplete(addressField, {
-        types: ["geocode"]
+        types: ["geocode"],
       });
 
       // get address components
@@ -32,7 +38,7 @@
 
         if (!Array.isArray(place.address_components)) {
           console.warn(
-            "place.address_components is not an Array. Will not process autosuggested address."
+            "place.address_components is not an Array. Will not process autosuggested address.",
           );
           return;
         }
@@ -69,7 +75,7 @@
         event.preventDefault();
         $("html, body").animate(
           { scrollTop: $($(this).attr("href")).offset().top },
-          speed
+          speed,
         );
       });
   });

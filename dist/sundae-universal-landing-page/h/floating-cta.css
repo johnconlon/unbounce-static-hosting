@@ -22,6 +22,15 @@
   }
 }
 
+#lp-pom-root {
+  height: 100%;
+  overflow: auto;
+}
+
+.no-display {
+  display: none !important;
+}
+
 /* HACK: we need to force an override of the google autocomplete
  * popup container. There's no other way to force it to open upwards
  * rather than downards.
@@ -29,8 +38,8 @@
  * The bottom property must be set - it is set in the media breakpoints.
  */
 .pac-container-override {
-  position: fixed!important;
-  top: auto!important;
+  position: fixed !important;
+  top: auto !important;
 }
 
 /* 
@@ -38,7 +47,7 @@
  */
 @media screen and (min-width: 600px) {
   .pac-container-override {
-    bottom: 75px!important;
+    bottom: 75px !important;
   }
 
   #lp-pom-form-251.floating {
@@ -102,7 +111,7 @@
  */
 @media screen and (max-width: 599px) {
   .pac-container-override {
-    bottom: 60px!important;
+    bottom: 60px !important;
   }
 
   #lp-pom-form-251.floating {
@@ -170,4 +179,78 @@
   #lp-pom-form-251.floating #lp-pom-button-252 span {
     display: none;
   }
+}
+
+.AddressModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 1;
+  font-family: Lato, sans-serif;
+}
+
+.AddressModal-header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.AddressModal-input {
+  border: 0;
+  padding: 5px;
+  font-size: 16px;
+  flex: 1;
+  background-color: #eaeaea;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.AddressModal-cancel {
+  color: #777;
+  cursor: pointer;
+  padding: 10px;
+  padding-left: 20px;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.AddressModal-cancel:active {
+  color: #333;
+}
+
+.AddressModal-body {
+  overflow: auto;
+  flex: 1;
+}
+
+.AddressModal-results {
+}
+
+.AddressModal-result {
+  padding: 15px;
+  border-bottom: 1px solid #eaeaea;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.AddressModal-result:active {
+  background-color: #eaeaea;
+}
+
+.AddressModal-result:last-child {
+  border-bottom: 0;
 }
