@@ -147,10 +147,12 @@
       });
       clearResults();
       $modalResultsList.append(fragment);
+      $modalResultsList.addClass("AddressModal-attribution");
     }
 
     function clearResults() {
       $modalResultsList.empty();
+      $modalResultsList.removeClass("AddressModal-attribution");
     }
 
     function show() {
