@@ -21,7 +21,7 @@
           $formElement.removeClass("floating");
           $(pacContainer).removeClass(overrideClass);
         }
-      }, 50),
+      }, 50)
     );
   });
 

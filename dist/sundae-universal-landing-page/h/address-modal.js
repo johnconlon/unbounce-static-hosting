@@ -13,7 +13,7 @@
 
     var autocompleteService = new google.maps.places.AutocompleteService();
     var placesService = new google.maps.places.PlacesService(
-      document.getElementById("attribution_container"),
+      document.getElementById("attribution_container")
     );
     var sessionToken = null; //hack
 
@@ -61,7 +61,7 @@
       var request = {
         placeId: placeId,
         fields: ["address_components"],
-        sessionToken: sessionToken,
+        sessionToken: sessionToken
       };
       placesService.getDetails(request, onPlaceDetails);
     }
@@ -85,7 +85,7 @@
       locality: "long_name",
       administrative_area_level_1: "long_name",
       country: "long_name",
-      postal_code: "short_name",
+      postal_code: "short_name"
     };
     function fillUnbounceForm(place) {
       console.log(place);
@@ -120,9 +120,9 @@
         {
           input: query,
           types: ["geocode"],
-          sessionToken: sessionToken,
+          sessionToken: sessionToken
         },
-        onResults,
+        onResults
       );
     }
 
