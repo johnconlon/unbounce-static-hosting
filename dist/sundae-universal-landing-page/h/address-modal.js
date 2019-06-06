@@ -75,7 +75,7 @@
       }
 
       fillUnbounceForm(place);
-      form.submit();
+      //form.submit();
       hide();
     }
 
