@@ -88,7 +88,6 @@
       postal_code: "short_name"
     };
     function fillUnbounceForm(place) {
-      console.log(place);
       var addressComponents = {};
       place.address_components.forEach(function(component) {
         const type = component.types[0];
@@ -102,6 +101,12 @@
       form.city.value = addressComponents.locality || "";
       form.state.value = addressComponents.administrative_area_level_1 || "";
       form.zip_code.value = addressComponents.postal_code || "";
+      form.autocomplete_address.value = [
+        form.address.value,
+        form.city.value,
+        form.state.value,
+        form.zip_code.value
+      ].join(", ");
 
       // Record whether the zip is in region
       const isInRegion =
