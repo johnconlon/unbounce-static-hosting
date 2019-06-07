@@ -30,6 +30,29 @@
     $body.append($modal);
     addEventListeners();
 
+    // This is wild.
+    // We *must* use a jquery object submit (e.g. $form.submit()),
+    // not a dom element submit (e.g. form.submit()). Unbounce
+    // doesn't appropriately change the post action unless we go
+    // through jquery :shrugging-man:/
+    //
+    // In addition, Unbounce has added custom form validation which
+    // *does not work* if you set values programmatically for required
+    // fields. In this case, the autocomplete_address field has the required
+    // attribute. We set value of that field programatically. This satisfies
+    // the browser validation constraints (because the input has a value) but
+    // does not pass the custom unbounce validation constrants. Would need to
+    // inspect the unbounce source to understand why, but my best guess is that
+    // they have some "change" listener which sets a dirty bit.
+    function submitForm() {
+      // Clear the unbounce custom validation for the autocomplete address input
+      window.ub.form.validationRules.autocomplete_address = {};
+      $pageInput[0].setCustomValidity("");
+
+      // Submit the form
+      $("form").submit();
+    }
+
     function addEventListeners() {
       $pageInput.focus(onFocusPageInput);
       $modalCancel.click(onTapCancel);
@@ -75,7 +98,7 @@
       }
 
       fillUnbounceForm(place);
-      //form.submit();
+      submitForm();
       hide();
     }
 
