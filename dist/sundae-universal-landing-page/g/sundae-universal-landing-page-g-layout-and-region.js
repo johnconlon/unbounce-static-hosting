@@ -7,7 +7,7 @@
   // otherwise they go to a different thank-you page without the lead tracking event.
   function bindFormRedirectOnSubmit(args) {
     var enteredZip = args.formElement
-      .querySelector('input[name="zip_code"')
+      .querySelector('input[name="zip_code"]')
       .value.trim();
     var isInRegion = zipsInRegion.indexOf(parseInt(enteredZip)) > -1;
     if (isInRegion) {
