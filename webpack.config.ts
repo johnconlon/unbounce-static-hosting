@@ -25,7 +25,7 @@ interface WebpackEnv {
 }
 
 module.exports = (env: WebpackEnv) => {
-  const outputDir = env.mode == 'production' ? 'dist' : 'build';
+  const outputDir = env.mode == 'production' ? 'dist' : '.build';
   const entries = glob.sync('./src/**/*/main.@(ts|js)', {
     ignore: '**/node_modules/**',
   });

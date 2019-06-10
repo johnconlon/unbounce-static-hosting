@@ -9,7 +9,7 @@
   "private": true,
   "browserslist": ["defaults"],
   "scripts": {
-    "start": "yarn build --watch & node_modules/.bin/http-server --cors",
+    "start": "yarn build --watch & node_modules/.bin/http-server ./.build --cors",
     "build": "webpack --env.mode=development",
     "prod": "webpack --env.mode=production"
   },
