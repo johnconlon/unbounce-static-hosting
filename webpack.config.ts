@@ -17,14 +17,15 @@ const relativeEntry = (entry: string) =>
   path.relative(path.resolve(__dirname, 'src'), entry);
 
 // The absolute dist/output path of an entry
-const outputPath = (entry: string) =>
-  path.dirname(path.resolve(__dirname, 'dist', relativeEntry(entry)));
+const outputPath = (outputDir: string, entry: string) =>
+  path.dirname(path.resolve(__dirname, outputDir, relativeEntry(entry)));
 
 interface WebpackEnv {
-  production: boolean;
+  mode: 'development' | 'production';
 }
 
-module.exports = () => {
+module.exports = (env: WebpackEnv) => {
+  const outputDir = env.mode == 'production' ? 'dist' : 'build';
   const entries = glob.sync('./src/**/*/main.@(ts|js)', {
     ignore: '**/node_modules/**',
   });
@@ -34,10 +35,10 @@ module.exports = () => {
     name: entryName(entry),
     entry: entry,
     output: {
-      path: outputPath(entry),
+      path: outputPath(outputDir, entry),
       filename: '[name].js',
     },
-    mode: 'development',
+    mode: env.mode,
     devServer: {
       contentBase: path.resolve(__dirname, 'static'),
     },
@@ -46,10 +47,10 @@ module.exports = () => {
         filename: '[name].css',
       }),
       new Dotenv({
-        path: './.env.development',
+        path: `./.env.${env.mode}`,
       }),
       new HtmlWebpackPlugin({
-        filename: outputPath(entry) + '/index.html',
+        filename: outputPath(outputDir, entry) + '/index.html',
       }),
     ],
     resolve: {

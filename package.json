@@ -9,11 +9,9 @@
   "private": true,
   "browserslist": ["defaults"],
   "scripts": {
-    "start": "node_modules/.bin/http-server --cors",
-    "server": "webpack-dev-server",
-    "build": "webpack",
-    "dev": "parcel src/pages/investor-landing/a/index.ts",
-    "prod": "parcel build src/pages/**/*/index.ts"
+    "start": "yarn build --watch & node_modules/.bin/http-server --cors",
+    "build": "webpack --env.mode=development",
+    "prod": "webpack --env.mode=production"
   },
   "dependencies": {
     "uuid": "^3.3.2"
