@@ -17,20 +17,26 @@ const relativeEntry = (entry: string) =>
   path.relative(path.resolve(__dirname, 'src'), entry);
 
 // The absolute dist/output path of an entry
-const distPath = (entry: string) =>
-  path.dirname(path.resolve(__dirname, 'build', relativeEntry(entry)));
+const outputPath = (entry: string) =>
+  path.dirname(path.resolve(__dirname, 'dist', relativeEntry(entry)));
 
 interface WebpackEnv {
   production: boolean;
 }
 
 module.exports = () => {
-  const entries = glob.sync('./src/**/*/index.@(ts|js)', {
+  const entries = glob.sync('./src/**/*/main.@(ts|js)', {
     ignore: '**/node_modules/**',
   });
 
   // Configuration options shared across all entries.
-  const shared = {
+  const config = (entry: string) => ({
+    name: entryName(entry),
+    entry: entry,
+    output: {
+      path: outputPath(entry),
+      filename: '[name].js',
+    },
     mode: 'development',
     devServer: {
       contentBase: path.resolve(__dirname, 'static'),
@@ -42,7 +48,9 @@ module.exports = () => {
       new Dotenv({
         path: './.env.development',
       }),
-      new HtmlWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        filename: outputPath(entry) + '/index.html',
+      }),
     ],
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
@@ -58,9 +66,13 @@ module.exports = () => {
           ],
         },
         {
-          test: /\.tsx?/,
-          use: 'ts-loader',
-          exclude: /node_modules/,
+          test: /\.tsx?$/,
+          use: {
+            loader: 'ts-loader',
+            options: {
+              allowTsInNodeModules: true,
+            },
+          },
         },
         {
           test: /\.css$/,
@@ -72,17 +84,7 @@ module.exports = () => {
         },
       ],
     },
-  };
-
-  const config = (entry: string) =>
-    Object.assign({}, shared, {
-      name: entryName(entry),
-      entry: entry,
-      output: {
-        path: distPath(entry),
-        filename: '[name].js',
-      },
-    });
+  });
 
   // Find all entry points and map them to webpack configs.
   return entries.map(config);

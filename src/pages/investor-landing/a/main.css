@@ -1,4 +1,4 @@
-@import '../../../node_modules/sundaelib/css/theme.css';
+@import 'sundaelib/css/theme.css';
 
 .Test {
   color: var(--colorInvestorBlue);
