@@ -7,13 +7,16 @@
   "author": "Julian Frumar <julian@frumar.com>",
   "license": "UNLICENSED",
   "private": true,
-  "browserslist": ["defaults"],
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "start": "yarn build --watch & node_modules/.bin/http-server ./.build --cors",
     "build": "webpack --env.mode=development",
     "prod": "webpack --env.mode=production"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
@@ -35,6 +38,7 @@
     "parcel-bundler": "^1.12.3",
     "postcss-color-function": "^4.1.0",
     "postcss-color-mod-function": "^3.0.3",
+    "postcss-custom-media": "^7.0.8",
     "postcss-custom-properties": "^8.0.10",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
