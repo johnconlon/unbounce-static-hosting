@@ -35,7 +35,6 @@
 
       autocomplete.addListener("place_changed", function() {
         const place = autocomplete.getPlace()
-        const geometry = place.geometry
 
         if (!Array.isArray(place.address_components)) {
           console.warn(
@@ -54,8 +53,6 @@
         form.city.value = addresses.locality || ""
         form.state.value = addresses.administrative_area_level_1 || ""
         form.zip_code.value = addresses.postal_code || ""
-        form.lat.value = geometry ? geometry.location.lat() : ""
-        form.lng.value = geometry ? geometry.location.lng() : ""
 
         // Record whether the zip is in region
         const isInRegion =
