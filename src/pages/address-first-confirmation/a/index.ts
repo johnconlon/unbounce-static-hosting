@@ -23,6 +23,21 @@ type LatLng = google.maps.LatLng | google.maps.LatLngLiteral;
 
 const addressRegex = /([^,]*), ([^,]*), ([A-Z]{2}) ([0-9]*)/;
 
+const confirmButtonId = "#lp-pom-button-258";
+
+// Catch the "Yes" button clicks and translate them into unbounce form
+// submissions.
+lp.jQuery(document).ready(($: JQueryStatic) => {
+  const $confirmButton = $(confirmButtonId);
+  const $form = $("form");
+  $confirmButton.on("click", function(event: Event) {
+    event.preventDefault();
+    // Unbounce breaks if you call `submit` directly on a form element. Must
+    // wrap it in jquery first :shrugging-man:
+    $form.submit();
+  });
+});
+
 // Google maps requires the init function is set on the window
 // We may not have the lat/lng....
 window.initMap = () => ready(initMap);
