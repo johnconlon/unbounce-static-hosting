@@ -1,82 +1,85 @@
-(function() {
+;(function() {
   const componentForm = {
     street_number: "short_name",
     route: "long_name",
     locality: "long_name",
     administrative_area_level_1: "long_name",
     country: "long_name",
-    postal_code: "short_name"
-  };
+    postal_code: "short_name",
+  }
 
   lp.jQuery(document).ready(function($) {
     // Generate a GUID that we'll use to identify this lead in Salesforce for step 2 (contact info).
     // We'll use a Zap to locate the newly created lead in order to update it with the contact info in
     // the second page which is a different form altogether.
     // Salesforce also requires that we set a lastname value, so we'll use it as a placeholder too
-    const guid = uuidv4();
-    $("#unbounce_guid").val(guid);
+    const guid = uuidv4()
+    $("#unbounce_guid").val(guid)
 
     // Hack
     var viewportWidth =
-      window.innerWidth || document.documentElement.clientWidth;
+      window.innerWidth || document.documentElement.clientWidth
     if (viewportWidth < 600) {
-      return;
+      return
     }
 
     // Setup autocomplete for any forms on the page
     $("form").each(function(i, form) {
-      const addressField = form.autocomplete_address;
+      const addressField = form.autocomplete_address
       const autocomplete = new google.maps.places.Autocomplete(addressField, {
-        types: ["geocode"]
-      });
+        types: ["geocode"],
+      })
 
       // get address components
-      const addresses = {};
+      const addresses = {}
 
       autocomplete.addListener("place_changed", function() {
-        const place = autocomplete.getPlace();
+        const place = autocomplete.getPlace()
+        const geometry = place.geometry
 
         if (!Array.isArray(place.address_components)) {
           console.warn(
             "place.address_components is not an Array. Will not process autosuggested address."
-          );
-          return;
+          )
+          return
         }
 
         place.address_components.forEach(function(component) {
-          const type = component.types[0];
-          addresses[type] = component[componentForm[type]] || "";
-        });
+          const type = component.types[0]
+          addresses[type] = component[componentForm[type]] || ""
+        })
 
         form.address.value =
-          (addresses.street_number || "") + " " + (addresses.route || "");
-        form.city.value = addresses.locality || "";
-        form.state.value = addresses.administrative_area_level_1 || "";
-        form.zip_code.value = addresses.postal_code || "";
+          (addresses.street_number || "") + " " + (addresses.route || "")
+        form.city.value = addresses.locality || ""
+        form.state.value = addresses.administrative_area_level_1 || ""
+        form.zip_code.value = addresses.postal_code || ""
+        form.lat.value = geometry ? geometry.location.lat() : ""
+        form.lng.value = geometry ? geometry.location.lng() : ""
 
         // Record whether the zip is in region
         const isInRegion =
-          zipsInRegion.indexOf(parseInt(form.zip_code.value)) > -1;
-        $("#in_region").val(isInRegion);
-      });
-    });
-  });
+          zipsInRegion.indexOf(parseInt(form.zip_code.value)) > -1
+        $("#in_region").val(isInRegion)
+      })
+    })
+  })
 
   // smooth scrolling
   lp.jQuery(function($) {
     // The speed of the scroll in milliseconds
-    var speed = 400;
+    var speed = 400
 
     // Find links that are #anchors and scroll to them
     $("a[href^=#]")
       .not(".lp-pom-form .lp-pom-button")
       .unbind("click.smoothScroll")
       .bind("click.smoothScroll", function(event) {
-        event.preventDefault();
+        event.preventDefault()
         $("html, body").animate(
           { scrollTop: $($(this).attr("href")).offset().top },
           speed
-        );
-      });
-  });
-})();
+        )
+      })
+  })
+})()
