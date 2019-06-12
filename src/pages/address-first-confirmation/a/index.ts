@@ -64,7 +64,7 @@ async function initMap() {
 }
 
 const parsePlaceFromQueryParams = (): Place => ({
-  address: getUrlParameter("place"),
+  address: getUrlParameter("address"),
   city: getUrlParameter("city"),
   state: getUrlParameter("state"),
   zipcode: getUrlParameter("zip_code"),
