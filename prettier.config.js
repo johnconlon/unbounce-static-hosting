@@ -3,9 +3,9 @@ module.exports = {
     {
       files: "*.{ts,js}",
       options: {
-        semi: false,
-        trailingComma: "es5",
+        semi: true,
+        trailingComma: "none",
       },
     },
   ],
-}
+};
