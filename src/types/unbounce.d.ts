@@ -1,14 +1,14 @@
 declare namespace lp {
-  const jQuery: JQueryStatic
+  const jQuery: JQueryStatic;
 }
 
 declare namespace ub {
   namespace page {
-    const variantId: string
+    const variantId: string;
   }
 }
 
 interface Window {
-  module: any
-  ub: any
+  module: any;
+  ub: any;
 }
