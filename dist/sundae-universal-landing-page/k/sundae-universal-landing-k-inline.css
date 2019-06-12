@@ -1,0 +1,60 @@
+html {
+    scroll-behavior: smooth;
+  }
+  .lp-pom-form input,
+  .lp-pom-form select {
+    font-family: Lato, sans-serif;
+    text-align: center;
+  }
+
+  #lp-pom-root .lp-pom-text a:link {
+    text-decoration: none
+  }
+
+  #lp-pom-root .lp-pom-text a:visited {
+    text-decoration: none
+  }
+
+  #lp-pom-root .lp-pom-text a:active {
+    text-decoration: none
+  }
+
+  #lp-pom-root .lp-pom-text a:hover {
+    text-decoration: none
+  }
+
+  #lp-pom-image-143 .lp-pom-image-container {
+    overflow: visible;
+    border-radius: 100%;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.22);
+  }
+
+  #lp-code-159 {
+    height: auto;
+  }
+
+  @media screen and (max-width: 599px) {
+    select[id="state"] {
+      border: none;
+      background: transparent;
+    }
+
+    /* Remove the dropshadow on inputs */
+    input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+
+  /* Google autocomplete */
+  .pac-item {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .pac-icon {
+    display: none;
+  }
+  .pac-item-query {
+    font-size: 15px;
+  }
