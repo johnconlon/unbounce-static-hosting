@@ -1,5 +1,6 @@
 require("es6-promise").polyfill();
 import { ready, getUrlParameter, getUrlParams } from "dom-utils";
+import STATES from "us-states";
 
 import "./main.css";
 
@@ -125,10 +126,11 @@ async function findPlace(map: google.maps.Map, query: string): Promise<Place> {
         throw new Error("Unknown address format.");
       }
 
+      const stateVal = addressParts[3];
       const place = {
         address: addressParts[1],
         city: addressParts[2],
-        state: addressParts[3],
+        state: STATES[stateVal] ? STATES[stateVal] : stateVal,
         zipcode: addressParts[4],
         lat: result.geometry!.location.lat(), // TODO: don't assume geometry exists
         lng: result.geometry!.location.lng()
