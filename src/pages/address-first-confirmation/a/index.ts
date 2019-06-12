@@ -21,7 +21,7 @@ interface Place {
 
 type LatLng = google.maps.LatLng | google.maps.LatLngLiteral;
 
-const addressRegex = /(?<address>[^,]*), (?<city>[^,]*), (?<state>[A-Z]{2}) (?<zipcode>[0-9]*)/;
+const addressRegex = /([^,]*), ([^,]*), ([A-Z]{2}) ([0-9]*)/;
 
 // Google maps requires the init function is set on the window
 // We may not have the lat/lng....
@@ -106,15 +106,15 @@ async function findPlace(map: google.maps.Map, query: string): Promise<Place> {
       }
 
       const addressParts = addressRegex.exec(result.formatted_address);
-      if (!addressParts || !addressParts.groups) {
+      if (!addressParts || addressParts.length !== 5) {
         throw new Error("Unknown address format.");
       }
 
       const place = {
-        address: addressParts.groups.address,
-        city: addressParts.groups.city,
-        state: addressParts.groups.state,
-        zipcode: addressParts.groups.zipcode,
+        address: addressParts[1],
+        city: addressParts[2],
+        state: addressParts[3],
+        zipcode: addressParts[4],
         lat: result.geometry!.location.lat(), // TODO: don't assume geometry exists
         lng: result.geometry!.location.lng()
       };
