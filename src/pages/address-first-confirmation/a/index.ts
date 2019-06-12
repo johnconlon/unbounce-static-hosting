@@ -30,7 +30,7 @@ const confirmButtonId = "#lp-pom-button-258";
 lp.jQuery(document).ready(($: JQueryStatic) => {
   const $confirmButton = $(confirmButtonId);
   const $form = $("form");
-  $confirmButton.on("click", function(event: Event) {
+  $confirmButton.click(function(event: JQuery.Event) {
     event.preventDefault();
     // Unbounce breaks if you call `submit` directly on a form element. Must
     // wrap it in jquery first :shrugging-man:
