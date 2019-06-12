@@ -7,18 +7,25 @@
   "author": "Julian Frumar <julian@frumar.com>",
   "license": "UNLICENSED",
   "private": true,
-  "browserslist": ["defaults"],
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
-    "start": "yarn build --watch & node_modules/.bin/http-server ./.build --cors",
+    "start": "yarn build --watch & node_modules/.bin/http-server --cors",
     "build": "webpack --env.mode=development",
     "prod": "webpack --env.mode=production"
   },
   "dependencies": {
+    "es6-promise": "^4.2.8",
+    "normalize.css": "^8.0.1",
+    "promise-polyfill": "^8.1.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@types/dotenv-webpack": "^1.7.0",
+    "@types/googlemaps": "^3.36.4",
     "@types/html-webpack-plugin": "^3.2.0",
+    "@types/jquery": "^3.3.29",
     "@types/mini-css-extract-plugin": "^0.2.1",
     "@types/node": "^12.0.4",
     "@types/webpack": "^4.4.32",
@@ -35,6 +42,7 @@
     "parcel-bundler": "^1.12.3",
     "postcss-color-function": "^4.1.0",
     "postcss-color-mod-function": "^3.0.3",
+    "postcss-custom-media": "^7.0.8",
     "postcss-custom-properties": "^8.0.10",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
