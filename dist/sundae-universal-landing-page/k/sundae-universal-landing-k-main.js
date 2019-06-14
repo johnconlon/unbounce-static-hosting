@@ -55,6 +55,8 @@
         const isInRegion =
           zipsInRegion.indexOf(parseInt(form.zip_code.value)) > -1;
         $("#in_region").val(isInRegion);
+
+        $(form).submit();
       });
     });
   });
