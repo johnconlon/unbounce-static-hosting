@@ -13,11 +13,13 @@
   "scripts": {
     "start": "yarn build --watch & node_modules/.bin/http-server --cors",
     "build": "webpack --env.mode=development",
-    "prod": "webpack --env.mode=production"
+    "prod": "webpack --env.mode=production",
+    "component": "node ./scripts/component"
   },
   "dependencies": {
     "es6-promise": "^4.2.8",
     "normalize.css": "^8.0.1",
+    "preact": "^8.4.2",
     "promise-polyfill": "^8.1.0",
     "uuid": "^3.3.2"
   },

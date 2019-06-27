@@ -1,0 +1,20 @@
+.Button {
+  display: block;
+  border-style: none;
+  border-radius: 5px;
+  background: rgba(21, 71, 150, 1);
+  box-shadow: none;
+  text-shadow: none;
+  color: #fff;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  text-align: center;
+  cursor: pointer;
+  padding: 12px 8px;
+  width: 100%;
+}
+
+.Button:hover {
+  background: rgba(16, 59, 143, 1);
+  box-shadow: none;
+}

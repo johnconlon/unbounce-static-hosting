@@ -1,0 +1,4 @@
+.PageBody {
+  flex: 1;
+  background-color: var(--colorLighterGray);
+}

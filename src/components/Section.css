@@ -1,0 +1,13 @@
+.Section {
+  margin: 50px 0;
+  padding: 15px;
+}
+
+.Section:first-child {
+  margin-top: 25px;
+}
+
+.Section--block {
+  background-color: #fff;
+  border-radius: 5px;
+}

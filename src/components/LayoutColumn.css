@@ -1,0 +1,17 @@
+/* TODO: breakpoints (import) */
+.LayoutColumn {
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (--small-viewport) {
+  .LayoutColumn {
+    width: 100%;
+  }
+}
+
+@media (--large-viewport) {
+  .LayoutColumn {
+    width: 80%;
+  }
+}

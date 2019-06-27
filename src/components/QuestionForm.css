@@ -1,0 +1,30 @@
+.QuestionForm {
+  margin: 25px 25px 0 25px;
+}
+
+.QuestionForm-questions {
+}
+
+.QuestionForm-question {
+  margin: 10px 0;
+}
+
+.QuestionForm-navigationContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1px solid #eaeaea;
+  margin-top: 40px;
+  padding-top: 15px;
+}
+
+.QuestionForm-backButton {
+  cursor: pointer;
+  color: #999;
+  font-size: 14px;
+}
+
+.QuestionForm-forwardButton {
+  margin-left: auto;
+  width: 175px;
+}
