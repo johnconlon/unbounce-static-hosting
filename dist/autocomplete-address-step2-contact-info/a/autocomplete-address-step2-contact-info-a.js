@@ -18,6 +18,14 @@ function bindFormRedirectOnSubmit() {
   });
 }
 
+// Ensure the referrer field is fewer than 255 characters to not break a backend
+// integration.
+function trimReferrer(args) {
+  var referrerInput = args.formElement.querySelector("#referrer");
+  var withoutQueryParams = referrerInput.value.split("?")[0];
+  referrerInput.value = withoutQueryParams;
+}
+
 // smooth scrolling
 lp.jQuery(function ($) {
   // The speed of the scroll in milliseconds
@@ -35,5 +43,6 @@ lp.jQuery(function ($) {
 
 lp.jQuery(document).ready(function ($) {
   bindFormRedirectOnSubmit();
+  window.ub.hooks.beforeFormSubmit.push(trimReferrer)
 });
 })()
