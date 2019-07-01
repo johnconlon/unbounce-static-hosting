@@ -5,8 +5,6 @@ export interface Props {
   children: ComponentChildren;
 }
 
-export default class PageHeader extends Component<Props> {
-  render(props: Props) {
-    return <div class="PageHeader">{props.children}</div>;
-  }
+export default function PageHeader(props: Props) {
+  return <div class="PageHeader">{props.children}</div>;
 }

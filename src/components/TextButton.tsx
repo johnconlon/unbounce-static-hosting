@@ -6,12 +6,10 @@ export interface Props {
   onClick: JSX.EventHandler<MouseEvent>;
 }
 
-export default class TextButton extends Component<Props> {
-  render(props: Props) {
-    return (
-      <div class="TextButton" role="button" onClick={props.onClick}>
-        {props.children}
-      </div>
-    );
-  }
+export default function TextButton(props: Props) {
+  return (
+    <div class="TextButton" role="button" onClick={props.onClick}>
+      {props.children}
+    </div>
+  );
 }

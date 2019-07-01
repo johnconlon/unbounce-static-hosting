@@ -6,13 +6,11 @@ export interface Props {
   children: ComponentChildren;
 }
 
-export default class Question extends Component<Props> {
-  render(props: Props) {
-    return (
-      <div class="Question">
-        <div class="Question-label">{props.label}</div>
-        <div class="Question-input">{props.children}</div>
-      </div>
-    );
-  }
+export default function Question(props: Props) {
+  return (
+    <div class="Question">
+      <div class="Question-label">{props.label}</div>
+      <div class="Question-input">{props.children}</div>
+    </div>
+  );
 }

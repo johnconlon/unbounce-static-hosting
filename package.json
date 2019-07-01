@@ -21,6 +21,7 @@
     "normalize.css": "^8.0.1",
     "preact": "^8.4.2",
     "promise-polyfill": "^8.1.0",
+    "tslib": "^1.10.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

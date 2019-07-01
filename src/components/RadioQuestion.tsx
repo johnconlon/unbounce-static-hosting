@@ -6,26 +6,25 @@ export interface Props {
   label: string;
   name: string;
   options: { [k: string]: string };
-  onChange: Function;
+  onChange: JSX.EventHandler<Event>;
 }
 
-export default class RadioQuestion extends Component<Props> {
-  render(props: Props) {
-    console.log(props.options);
-    return (
-      <Question label={props.label}>
-        {Object.entries(props.options).map(([key, value]) => (
-          <div class="RadioQuestion-radio">
-            <input
-              type="radio"
-              name={props.name}
-              value={key}
-              id={`${name}-${key}`}
-            />
-            <label for={`${name}-${key}`}>{value}</label>
-          </div>
-        ))}
-      </Question>
-    );
-  }
+export default function RadioQuestion(props: Props) {
+  console.log(props.options);
+  return (
+    <Question label={props.label}>
+      {Object.entries(props.options).map(([key, value]) => (
+        <div class="RadioQuestion-radio">
+          <input
+            type="radio"
+            name={props.name}
+            value={value}
+            id={`${name}-${value}`}
+            onChange={props.onChange}
+          />
+          <label for={`${name}-${value}`}>{key}</label>
+        </div>
+      ))}
+    </Question>
+  );
 }
