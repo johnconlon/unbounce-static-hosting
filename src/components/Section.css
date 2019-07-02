@@ -1,13 +1,15 @@
 .Section {
-  margin: 50px 0;
+  margin-bottom: 50px;
   padding: 15px;
-}
-
-.Section:first-child {
-  margin-top: 25px;
 }
 
 .Section--block {
   background-color: #fff;
   border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+  .Section:first-child {
+    margin-top: 25px;
+  }
 }

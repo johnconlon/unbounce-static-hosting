@@ -1,4 +1,4 @@
-@import "sundaelib/css/theme.css";
+@import "~sundaelib/css/theme.css";
 
 #address-map {
   height: 100%;

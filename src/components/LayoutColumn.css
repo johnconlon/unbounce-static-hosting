@@ -4,13 +4,13 @@
   position: relative;
 }
 
-@media (--small-viewport) {
+@media (max-width: 600px) {
   .LayoutColumn {
     width: 100%;
   }
 }
 
-@media (--large-viewport) {
+@media (min-width: 600px) {
   .LayoutColumn {
     width: 80%;
   }

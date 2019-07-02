@@ -2,14 +2,15 @@ import { h, Component } from "preact";
 import "./Button.css";
 
 export interface Props {
-  children: string;
-  onClick: JSX.EventHandler<MouseEvent>;
+  children: string
+  onClick?: JSX.EventHandler<MouseEvent>
+  type?: string
 }
 
 export default function Button(props: Props) {
   return (
-    <div class="Button" role="button" onClick={props.onClick}>
+    <button type={props.type} class="Button" onClick={props.onClick}>
       {props.children}
-    </div>
+    </button>
   );
 }

@@ -1,4 +1,4 @@
-import { h, Component, ComponentChildren } from "preact";
+import { h, ComponentChildren } from "preact";
 import "./Section.css";
 
 export interface Props {

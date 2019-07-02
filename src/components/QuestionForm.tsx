@@ -1,35 +1,48 @@
 import { h, Component, ComponentChild } from "preact";
-//import { isArray } from "util";
+import { goBack } from "dom-utils";
 
 import Button from "./Button";
 import LayoutColumn from "./LayoutColumn";
 import "./QuestionForm.css";
 
 export interface Props {
+  onSubmit?: Function;
   children: ComponentChild | ComponentChild[];
+  class?: string;
 }
 
-export default function QuestionForm(props: Props) {
-  const children = Array.isArray(props.children)
-    ? props.children
-    : [props.children];
-  return (
-    <LayoutColumn>
-      <form class="QuestionForm">
-        <div class="QuestionForm-questions">
-          {children.map((child: ComponentChild) => (
-            <div class="QuestionForm-question">{child}</div>
-          ))}
-        </div>
-        <div class="QuestionForm-navigationContainer">
-          <div role="button" class="QuestionForm-backButton" onClick={() => {}}>
-            &lt; Back
+export default class QuestionForm extends Component<Props> {
+  onSubmit = (event: Event) => {
+    this.props.onSubmit && this.props.onSubmit(event)
+  }
+
+  render(props: Props) {
+    const children = Array.isArray(props.children)
+      ? props.children
+      : [props.children];
+    const classNames = props.class ? "QuestionForm " + props.class : "QuestionForm"
+    return (
+      <LayoutColumn>
+        <form class={classNames} onSubmit={this.onSubmit}>
+          <div class="QuestionForm-questions">
+            {children.map((child: ComponentChild) => (
+              <div class="QuestionForm-question">{child}</div>
+            ))}
           </div>
-          <div class="QuestionForm-forwardButton">
-            <Button onClick={() => {}}>Submit</Button>
+          <div class="QuestionForm-navigationContainer">
+            <div
+              role="button"
+              class="QuestionForm-backButton"
+              onClick={goBack}
+            >
+              &lt; Back
+            </div>
+            <div class="QuestionForm-forwardButton">
+              <Button>Submit</Button>
+            </div>
           </div>
-        </div>
-      </form>
-    </LayoutColumn>
-  );
+        </form>
+      </LayoutColumn>
+    );
+  }
 }
