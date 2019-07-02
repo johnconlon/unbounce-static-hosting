@@ -5,7 +5,7 @@ import { render, h } from "preact";
 import LayoutColumn from "sundaelib/components/LayoutColumn";
 import Section from "sundaelib/components/Section";
 import QuestionForm from "sundaelib/components/QuestionForm";
-import TimelineQuestion from "../../components/MSOWTimelineQuestion";
+import TimelineQuestion from "../../components/msow/TimelineQuestion";
 
 import "normalize.css";
 import "sundaelib/css/reset.css";
