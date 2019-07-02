@@ -1,8 +1,8 @@
 import { h, ComponentChildren } from "preact";
 
-import LayoutColumn from "sundaelib/components/LayoutColumn";
-import Section from "sundaelib/components/Section";
-import QuestionForm from "sundaelib/components/QuestionForm";
+import LayoutColumn from "./LayoutColumn";
+import Section from "./Section";
+import QuestionForm from "./QuestionForm";
 
 export interface Props {
   onSubmit: JSX.EventHandler<Event>;

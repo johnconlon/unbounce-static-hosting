@@ -1,5 +1,5 @@
 import { h } from "preact";
-import RadioQuestion from "sundaelib/components/RadioQuestion";
+import RadioQuestion from "../RadioQuestion";
 
 export interface Props {
   onChange?: JSX.EventHandler<Event>;
