@@ -4,6 +4,20 @@ This public repo contains the sources we wish to publish for use in Unbounce lan
 
 Public root is hosted at http://sundaehq.github.io/unbounce-static-hosting/
 
+## Building for production
+
+The `build` command accepts a config name and will build just that configuration. This is useful for ensuring only the page/component you're working on is updated for production in `dist`.
+
+For example:
+```
+# Will build only the msow timeline page.
+yarn build pages-msow-timeline
+```
+The config names are generally the path to the relevant index.ts, with slashes converted to dashes e.g. the address confirmation page located at `src/pages/address-confirmation/a` would have the config name `pages-address-confirmation-a`. Similarly, the msow-timeline page at `src/pages/msow-timeline` would have the config name `pages-msow-timeline`.
+
+### Building all pages
+The `yarn build-all` command will build all pages.
+
 ## Naming convention
 
 We need to host JS and CSS for multiple pages, and multiple variants nested within each page.
@@ -44,9 +58,9 @@ and then access the root of dist at [http://localhost:8080/](). You can use this
 
 ### CSS/PostCSS
 
-`postcss-loader` and `css-loader` parse each css file separately, which prevents `postcss-preset-env` from working correctly when using imports. For example, when importing custom properties defined in `theme.css` into another css file, `foo.css`, which uses those custom properties, `postcss-preset-env` doesn't correctly build the fallback css properties for older browsers. To solve this, we use `postcss-import` which includes all imported css files into a single file, then runs the other postcss plugins on that single large file.
+This is a work in progress. For now, we use the `importFrom` property provided by the `postcss-preset-env` plugin to indicate where postcss globals are located. Worth noting that we still need to import that same css file in the `index.tsx` of every page :shrugging-man:.
 
-`postcss-preset-env` has an `importFrom` plugin property which can be set. This is pretty inadequate - you have to know all of the files which will be imported and list them at the config level :shruggin-man:. Maybe this would work if it accepts globs, but is still accident prone and takes manual curation.
+TODO: Support different themes (e.g. seller, investor)
 
 ## Other Notes
 
