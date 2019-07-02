@@ -11,9 +11,10 @@
     "defaults"
   ],
   "scripts": {
-    "start": "yarn build --watch & node_modules/.bin/http-server --cors",
-    "build": "webpack --env.mode=development",
-    "prod": "webpack --env.mode=production",
+    "start": "yarn build-dev --watch & node_modules/.bin/http-server --cors",
+    "build-dev": "webpack --env.mode=development",
+    "build": "webpack --env.mode=production --config-name",
+    "build-all": "webpack --env.mode=production",
     "component": "node ./scripts/component"
   },
   "dependencies": {
