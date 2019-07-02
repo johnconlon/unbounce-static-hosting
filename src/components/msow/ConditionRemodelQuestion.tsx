@@ -5,12 +5,13 @@ export interface Props {
   onChange?: JSX.EventHandler<Event>;
 }
 
-export const LABEL = "Was the kitchen or bathroom remodeled in the last 5-7 years?"
-export const INPUT_NAME = "condition_remodel"
+export const LABEL =
+  "Was the kitchen or bathroom remodeled in the last 5-7 years?";
+export const INPUT_NAME = "condition_remodel";
 export const OPTIONS = {
-  "Yes": "Yes",
-  "No": "No"
-}
+  Yes: "Yes",
+  No: "No"
+};
 
 export default function MLSListingQuestion(props: Props) {
   return (

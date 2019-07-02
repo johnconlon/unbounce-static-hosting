@@ -5,12 +5,6 @@ export interface Props {
   onChange?: JSX.EventHandler<Event>;
 }
 
-export interface Question {
-  name: string;
-  label: string;
-  options: { [label: string]: string }[];
-}
-
 export const OPTIONS = {
   Yesterday: "Yesterday",
   "1-3 months": "1-3 months",

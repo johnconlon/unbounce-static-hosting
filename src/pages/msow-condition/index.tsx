@@ -3,7 +3,8 @@ import * as Unbounce from "unbounce";
 import { render, h } from "preact";
 
 import UnbounceQuestionContainer from "../../components/UnbounceQuestionContainer"
-import TimelineQuestion from "../../components/msow/TimelineQuestion";
+import ConditionRemodelQuestion from "../../components/msow/ConditionRemodelQuestion";
+import ConditionRoofQuestion from "../../components/msow/ConditionRoofQuestion";
 
 import "normalize.css";
 import "sundaelib/css/reset.css";
@@ -17,7 +18,8 @@ Unbounce.init(
         {(submit: JSX.EventHandler<Event>) => {
           return (
                 <UnbounceQuestionContainer onSubmit={submit}>
-                  <TimelineQuestion />
+                  <ConditionRemodelQuestion />
+                  <ConditionRoofQuestion />
                 </UnbounceQuestionContainer>
           );
         }}
