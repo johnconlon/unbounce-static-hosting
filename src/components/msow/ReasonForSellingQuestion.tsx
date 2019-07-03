@@ -1,5 +1,5 @@
 import { h } from "preact";
-import RadioQuestion from "../RadioQuestion";
+import OtherRadioQuestion from "../OtherRadioQuestion";
 
 export interface Props {
   onChange?: JSX.EventHandler<Event>;
@@ -12,16 +12,19 @@ export const OPTIONS = {
   "I inherited the house": "I inherited the house",
   "Financial or other life events": "Financial or other life events",
   "Offloading a rental property": "Offloading a rental property",
-  "Just curious / good time to sell": "Just curious / good time to sell"
+  "Just curious / good time to sell": "Just curious / good time to sell",
+  "Other": "Other"
 };
+export const OTHER_PLACEHOLDER = "Why are you selling?"
 
 export default function MLSListingQuestion(props: Props) {
   return (
-    <RadioQuestion
+    <OtherRadioQuestion
       name={INPUT_NAME}
       label={LABEL}
       options={OPTIONS}
       onChange={props.onChange}
+      otherPlaceholder={OTHER_PLACEHOLDER}
       required
     />
   );
