@@ -1,5 +1,5 @@
 .QuestionForm-question {
-  margin: 10px 0 35px 0;
+  margin-bottom: 50px;
 }
 
 .QuestionForm-navigationContainer {
@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: center;
   border-top: 1px solid var(--colorLighterGray);
-  margin-top: 40px;
+  margin-top: 75px;
   padding-top: 15px;
 }
 
@@ -20,11 +20,18 @@
 .QuestionForm-forwardButton {
   margin-left: auto;
   width: 175px;
+  font-size: 16px;
 }
 
 /* Not a huge fan of this... */
 @media (min-width: 600px) {
   .QuestionForm {
-    margin-top: 25px;
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .QuestionForm {
+    margin-top: 5px;
   }
 }
