@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import Dotenv from "dotenv-webpack";
 import glob from "glob";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import fs from "fs";
 
 // A dash-separated name for an entry. For example: src/pages/investor/a would be
 // pages-investor-a.
@@ -24,9 +25,18 @@ interface WebpackEnv {
   mode: "development" | "production";
 }
 
+// The HtmlWebpackPlugin has a bug where multiple configs can't reference
+// the same template file :shrugging-man:
+// TODO: this is pretty ridiculous, open a PR to fix HtmlWebpackPlugin
+// or fork it.
+const htmlTemplate = fs.readFileSync(
+  path.resolve(__dirname, "src/index.html"),
+  "utf8"
+);
+
 module.exports = (env: WebpackEnv) => {
   const outputDir = env.mode == "production" ? "dist" : ".build";
-  const entries = glob.sync("./src/**/*/index.@(ts|js)", {
+  const entries = glob.sync("./src/**/*/index.@(tsx|ts|js)", {
     ignore: "./**/node_modules/**"
   });
 
@@ -50,6 +60,7 @@ module.exports = (env: WebpackEnv) => {
         path: `./.env.${env.mode}`
       }),
       new HtmlWebpackPlugin({
+        templateContent: htmlTemplate,
         filename: outputPath(outputDir, entry) + "/index.html"
       })
     ],
@@ -79,7 +90,7 @@ module.exports = (env: WebpackEnv) => {
           test: /\.css$/,
           use: [
             MiniCssExtractPlugin.loader,
-            { loader: "css-loader" },
+            { loader: "css-loader", options: { importLoaders: 1 } },
             "postcss-loader"
           ]
         }

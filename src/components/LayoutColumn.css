@@ -1,0 +1,17 @@
+/* TODO: breakpoints (import) */
+.LayoutColumn {
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .LayoutColumn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .LayoutColumn {
+    width: 80%;
+  }
+}

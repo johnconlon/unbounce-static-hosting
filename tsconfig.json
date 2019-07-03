@@ -8,6 +8,8 @@
     "allowJs": true,
     "noFallthroughCasesInSwitch": true,
     "strict": true,
+    "jsx": "react",
+    "jsxFactory": "h",
     "sourceMap": true
   },
   "include": ["src/**/*", "src/node_modules/**/*"]

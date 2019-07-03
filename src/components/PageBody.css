@@ -1,0 +1,6 @@
+@import "~sundaelib/css/theme.css";
+
+.PageBody {
+  flex: 1;
+  background-color: var(--colorLighterGray);
+}

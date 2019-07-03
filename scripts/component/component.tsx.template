@@ -1,0 +1,11 @@
+import { h, Component } from "preact";
+import "./COMPONENT_NAME.css";
+
+export interface Props {
+}
+
+export default class COMPONENT_NAME extends Component<Props> {
+  render(props: Props) {
+    return <div class="COMPONENT_NAME"></div>;
+  }
+}

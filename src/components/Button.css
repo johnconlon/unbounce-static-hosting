@@ -1,0 +1,20 @@
+.Button {
+  display: block;
+  border-style: none;
+  border-radius: 5px;
+  background: var(--colorSundaeRed);
+  box-shadow: none;
+  text-shadow: none;
+  color: #fff;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  text-align: center;
+  cursor: pointer;
+  padding: 12px 8px;
+  width: 100%;
+}
+
+.Button:hover {
+  background: var(--colorDarkSundaeRed);
+  box-shadow: none;
+}

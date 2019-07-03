@@ -1,3 +1,5 @@
+// TODO: move this to the unbounce module
+
 declare namespace lp {
   const jQuery: JQueryStatic;
 }
@@ -12,3 +14,8 @@ interface Window {
   module: any;
   ub: any;
 }
+
+type Unbounce = {
+  container: HTMLElement;
+  form: HTMLFormElement;
+};
