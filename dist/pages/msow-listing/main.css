@@ -29,6 +29,7 @@
   display: block;
   border-style: none;
   border-radius: 5px;
+  background: #db3758;
   background: var(--colorSundaeRed);
   box-shadow: none;
   text-shadow: none;
@@ -42,6 +43,7 @@
 }
 
 .Button:hover {
+  background: rgb(204, 55, 85);
   background: var(--colorDarkSundaeRed);
   box-shadow: none;
 }
@@ -54,6 +56,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-top: 1px solid #eaeaea;
   border-top: 1px solid var(--colorLighterGray);
   margin-top: 40px;
   padding-top: 15px;
@@ -61,6 +64,7 @@
 
 .QuestionForm-backButton {
   cursor: pointer;
+  color: #9e9e9e;
   color: var(--colorGray);
   font-size: 14px;
 }
@@ -468,34 +472,30 @@ body {
   position: relative;
 }
 
-/**
- * Breakpoints
- * Copy Unbounce for now
- */
-@custom-media --small-viewport (max-width: 600px);
-@custom-media --large-viewport (min-width: 600px);
-
 :root {
-    --colorLighterGray: #eaeaea;
-    --colorGray: #9e9e9e;
-    --colorDarkGray: #4c4c4c;
-    --colorInvestorBlue: #154796;
-    --colorDarkInvestorBlue: rgb(21, 92, 204);
-    --colorSundaeRed: #db3758;
-    --colorDarkSundaeRed: rgb(204, 55, 85);
-    --colorFont: #3a3a3a;
-  }
+  --colorLighterGray: #eaeaea;
+  --colorGray: #9e9e9e;
+  --colorDarkGray: #4c4c4c;
+  --colorInvestorBlue: #154796;
+  --colorDarkInvestorBlue: rgb(21, 92, 204);
+  --colorSundaeRed: #db3758;
+  --colorDarkSundaeRed: rgb(204, 55, 85);
+  --colorFont: #3a3a3a;
+}
+
 .u-whiteBackground {
   background-color: #fff;
 }
 
 .u-lightGrayBackground {
+  background-color: #eaeaea;
   background-color: var(--colorLighterGray);
 }
 
 html {
   font-family: Lato, sans-serif;
   font-size: 14px;
+  color: #3a3a3a;
   color: var(--colorFont);
 }
 
