@@ -110,6 +110,21 @@
   cursor: pointer;
 }
 
+.TextInput {
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    border: 1px solid var(--colorLighterGray);
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 11px 8px;
+}
+.OtherRadioQuestion-otherField {
+  margin-top: 10px;
+}
+
+.OtherRadioQuestion-otherInput {
+  width: 100%;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -494,6 +509,10 @@ body {
 .u-lightGrayBackground {
   background-color: #eaeaea;
   background-color: var(--colorLighterGray);
+}
+
+.u-hidden {
+  visibility: hidden;
 }
 
 html {
