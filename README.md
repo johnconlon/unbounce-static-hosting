@@ -16,6 +16,8 @@ The combination of these two styles in a single repo can be confusing. We're mov
 Documentation for both kinds of code is provided below.
 
 ## Unbounce and the page model
+[Unbounce](unbounce.com) is a SaaS tool and visual builder for landing pages. We currently use it to host landing pages, but are moving away from it. More information on Unbounce and our plans for it can be found here: https://docs.google.com/presentation/d/1_YMYPm08OJz3AEcawoAaVQ2eKX9Gl7o3V6_hSZiVOHU/edit?usp=sharing.
+
 Unbounce is organized around the concept of Pages and Variants of those pages. The code in this repo is generally organized around that same concept. In "legacy" code, source is organized into directoriess which indicate which page those assets should be loaded on - see the "Naming Convention" section for details. In "modern" code, we define an entry point for each page which determines the bundle to be served for that page - see "Entry Points and Pages" for more details.
 
 ## Directory Structure Overview
@@ -50,7 +52,7 @@ Both the folders for each page and each variant should contain a README.md file 
 
 ## Modern Code
 
-We use Typescript, Preact, and Webpack for "modern"-style code. All "modern" code lives in the `src` directory.
+We use [Typescript](https://www.typescriptlang.org/), [Preact](https://preactjs.com/), and [Webpack](https://webpack.js.org/) for "modern"-style code. All "modern" code lives in the `src` directory.
 
 We use Preact rather than React because of Preact's small bundle size (3kb).
 
