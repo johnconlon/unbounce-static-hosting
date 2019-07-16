@@ -84,7 +84,7 @@ In [package.json](./package.json), we have a dev dependency on http-server. So y
 
 ```javascript
 yarn
-npm start
+yarn start
 ```
 
 and then access the root of dist at [http://localhost:8080/](). You can use this path in the script tag while developing the page in Unbounce.
