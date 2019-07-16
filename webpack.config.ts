@@ -36,7 +36,7 @@ const htmlTemplate = fs.readFileSync(
 
 module.exports = (env: WebpackEnv) => {
   const outputDir = env.mode == "production" ? "dist" : ".build";
-  const entries = glob.sync("./src/**/*/index.@(tsx|ts|js)", {
+  const entries = glob.sync("./src/pages/**/*/index.@(tsx|ts|js)", {
     ignore: "./**/node_modules/**"
   });
 
