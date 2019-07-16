@@ -14,7 +14,7 @@ export default function StepPage(props: Props) {
       <Page>
         <PageHeader>
           <LayoutColumn>
-            <h1>Hello Sundae</h1>
+            <h1>Sundae Dev</h1>
           </LayoutColumn>
         </PageHeader>
         <PageBody>
