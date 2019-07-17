@@ -3,6 +3,7 @@ import * as Unbounce from "unbounce";
 import { render, h } from "preact";
 
 import UnbounceQuestionContainer from "../../components/UnbounceQuestionContainer"
+import ConditionQuestion from "../../components/msow/ConditionQuestion";
 import ConditionRemodelQuestion from "../../components/msow/ConditionRemodelQuestion";
 import ConditionRoofQuestion from "../../components/msow/ConditionRoofQuestion";
 import StepPage from "../../components/StepPage";
@@ -21,8 +22,7 @@ if (Unbounce.isUnbounce()) {
           {(submit: JSX.EventHandler<Event>) => {
             return (
                   <UnbounceQuestionContainer onSubmit={submit}>
-                    <ConditionRemodelQuestion />
-                    <ConditionRoofQuestion />
+                    <ConditionQuestion />
                   </UnbounceQuestionContainer>
             );
           }}
@@ -40,8 +40,7 @@ if (Unbounce.isUnbounce()) {
   render(
       <StepPage>
         <QuestionForm onSubmit={onSubmit}>
-          <ConditionRemodelQuestion />
-          <ConditionRoofQuestion />
+          <ConditionQuestion />
         </QuestionForm>
       </StepPage>,
       document.body
