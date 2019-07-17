@@ -18,10 +18,10 @@ export default class MultiCheckboxQuestion extends Component<Props> {
               type="checkbox"
               className="MultiCheckboxQuestion-checkboxInput"
               name={name}
-              id={name}
+              id={`${name}-id`}
               onChange={props.onChange}
             />
-            <label for={name}>{checkboxLabel}</label>
+            <label for={`${name}-id`}>{checkboxLabel}</label>
           </div>
         ))}
       </Question>
