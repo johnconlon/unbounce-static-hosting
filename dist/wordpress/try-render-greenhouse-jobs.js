@@ -30,5 +30,6 @@ function tryRenderGreenhouseJobs() {
     html.push('</div>');
     html.push('</div></div></section>');
     $('#greenhouse-placeholder').closest('.container').after(html.join(''));
+    $('#greenhouse-placeholder').hide();
   }
 }
