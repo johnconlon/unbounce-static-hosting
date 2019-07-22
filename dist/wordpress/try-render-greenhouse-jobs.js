@@ -11,7 +11,7 @@ function tryRenderGreenhouseJobs() {
       if (job) {
         jobLocationName = (job.location && job.location.name) ? job.location.name : ''; 
 
-        html.push("<div class=\"col\">");
+        html.push('<div class="col">');
         html.push('  <div class="career-card">');
         html.push('    <h3 class="career-card__title">');
         html.push('      <a href="' + job.absolute_url + '" target="_blank">');
@@ -23,6 +23,11 @@ function tryRenderGreenhouseJobs() {
         html.push('</div>');
       }
     }
+    html.push('<div class="col">');
+    html.push('  <div class="career-card">');
+    html.push('    <p class="career-card__msg">Check back soon for new positions. </p>');
+    html.push('  </div>');
+    html.push('</div>');
     html.push('</div></div></section>');
     $('#greenhouse-placeholder').closest('.container').after(html.join(''));
   }
