@@ -24,7 +24,7 @@ function tryRenderGreenhouseJobs() {
       }
     }
     html.push('<div class="col">');
-    html.push('  <div class="career-card">');
+    html.push('  <div class="career-card career-card--disabled">');
     html.push('    <p class="career-card__msg">Check back soon for new positions. </p>');
     html.push('  </div>');
     html.push('</div>');
