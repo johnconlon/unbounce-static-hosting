@@ -5,6 +5,7 @@ function tryRenderGreenhouseJobs() {
   var job;
   var jobLocationName;
   if (isJobsReady && isDomReady && jobs) {
+    html.push('<div class="container"><div class="row">');
     for (i = 0; i < jobs.length; i++) {
       job = jobs[i];
       if (job) {
@@ -21,7 +22,8 @@ function tryRenderGreenhouseJobs() {
         html.push('  </div>');
         html.push('</div>');
       }
+      html.push('</div></div>');
     }
-    $('#greenhouse-container').html(html.join(''));
+    $('#greenhouse-placeholder').parent('.container').html(html.join(''));
   }
 }
