@@ -5,7 +5,7 @@ function tryRenderGreenhouseJobs() {
   var job;
   var jobLocationName;
   if (isJobsReady && isDomReady && jobs) {
-    html.push('<div class="container"><div class="row">');
+    html.push('<section class="careers"><div class="container"><div class="row">');
     for (i = 0; i < jobs.length; i++) {
       job = jobs[i];
       if (job) {
@@ -22,8 +22,8 @@ function tryRenderGreenhouseJobs() {
         html.push('  </div>');
         html.push('</div>');
       }
-      html.push('</div></div>');
     }
-    $('#greenhouse-placeholder').parent('.container').html(html.join(''));
+    html.push('</div></div></section>');
+    $('#greenhouse-placeholder').closest('.container').after(html.join(''));
   }
 }
