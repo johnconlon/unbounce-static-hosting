@@ -67,7 +67,7 @@
     var speed = 400;
 
     // Find links that are #anchors and scroll to them
-    $("a[href^=#]")
+    $("a[href^=\\#]")
       .not(".lp-pom-form .lp-pom-button")
       .unbind("click.smoothScroll")
       .bind("click.smoothScroll", function(event) {
