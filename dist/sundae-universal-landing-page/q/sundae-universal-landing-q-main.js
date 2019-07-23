@@ -8,7 +8,7 @@
     postal_code: "short_name"
   };
 
-  lp.jQuery(document).ready(function($) {
+  $(document).ready(function($) {
     // Generate a GUID that we'll use to identify this lead in Salesforce for step 2 (contact info).
     // We'll use a Zap to locate the newly created lead in order to update it with the contact info in
     // the second page which is a different form altogether.
@@ -62,7 +62,7 @@
   });
 
   // smooth scrolling
-  lp.jQuery(function($) {
+  $(function($) {
     // The speed of the scroll in milliseconds
     var speed = 400;
 
