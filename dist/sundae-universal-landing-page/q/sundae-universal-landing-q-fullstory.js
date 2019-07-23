@@ -1,7 +1,7 @@
 (function() {
   // Tell FullStory the user's name once they enter something
   function bindSetFullStoryVars() {
-    $('input[name*="_name"]').live('change', function() {
+    $(document).on('change', 'input[name*="_name"]', function() {
       var firstName = $('#first_name').val();
       var lastName  = $('#last_name').val();
       if (typeof FS != "undefined") {
