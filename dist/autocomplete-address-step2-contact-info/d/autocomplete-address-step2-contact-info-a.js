@@ -10,7 +10,7 @@ function bindFormRedirectOnSubmit() {
     const enteredZip = $('form').get(0).zip_code.value.trim();
     const isInRegion = zipsInRegion.indexOf(parseInt(enteredZip)) > -1;
     if (!isInRegion) {
-      window.module.lp.form.data.url = QUALIFIED_LEAD_THANK_YOU_PAGE;
+      // window.module.lp.form.data.url = QUALIFIED_LEAD_THANK_YOU_PAGE;
     } else {
       // Use the configured MSOW flow
     }
