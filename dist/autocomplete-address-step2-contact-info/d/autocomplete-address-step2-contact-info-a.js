@@ -1,6 +1,7 @@
 (function() {
 const QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you/';
 const NON_QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you-nql/';
+const MSOW_FIRST_PAGE = 'http://sundae.com/get-offer/details/timeline/';
 
 // Direct the user to a different page depending on whether their zip is in region or not
 // We'll use the thank-you page with the FB "Lead" tracking event if the zip is in region
@@ -9,10 +10,10 @@ function bindFormRedirectOnSubmit() {
   $('input').live('change', function () {
     const enteredZip = $('form').get(0).zip_code.value.trim();
     const isInRegion = zipsInRegion.indexOf(parseInt(enteredZip)) > -1;
-    if (!isInRegion) {
-      // window.module.lp.form.data.url = QUALIFIED_LEAD_THANK_YOU_PAGE;
+    if (isInRegion) {
+      window.module.lp.form.data.url = MSOW_FIRST_PAGE;
     } else {
-      // Use the configured MSOW flow
+      window.module.lp.form.data.url = MSOW_FIRST_PAGE;
     }
     $('.lp-pom-form [name="in_region"]').val(isInRegion);
   });
