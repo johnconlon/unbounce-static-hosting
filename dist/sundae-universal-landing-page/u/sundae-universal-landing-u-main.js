@@ -45,7 +45,7 @@ $(window).on('load', function(){
       url: 'https://sundae.com/fsg?lp-form-submit-method=ajax&pageId=' + $form.find('input[name=pageId]').val() + '&variant=u',
       data: $form.serialize(), 
       success: function(response) {
-        location.href.replace('https://sundae.com/get-offer/contact-details/?unbounce_guid=' + guid);
+        location.replace('https://sundae.com/get-offer/contact-details/?unbounce_guid=' + guid);
       }
     });
   }
