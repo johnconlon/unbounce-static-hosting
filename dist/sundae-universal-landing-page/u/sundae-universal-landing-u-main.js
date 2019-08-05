@@ -40,7 +40,7 @@ $(window).on('load', function(){
     
     $('#in_region').val(isInRegion);
     
-    submit(getForm());
+    // submit(getForm());
   }
 });
 
