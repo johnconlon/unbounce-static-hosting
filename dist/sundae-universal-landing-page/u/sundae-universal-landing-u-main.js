@@ -30,6 +30,7 @@ $(window).on('load', function(){
   const guidParts = guid.split('-');
   var zipCode = qs('zip_code');
   var isInRegion = false;
+  var $form = $('.lp-pom-form form');
   
   $('#unbounce_guid').val(guid);
   
@@ -39,8 +40,14 @@ $(window).on('load', function(){
     isInRegion = zipsInRegion.indexOf(zipCode) > -1;
     
     $('#in_region').val(isInRegion);
-    
-    // submit(getForm());
+    $.ajax({
+      type: 'POST',
+      url: 'https://sundae.com/fsg?lp-form-submit-method=ajax&pageId=' + $form.find('input[name=pageId]').val() + '&variant=u',
+      data: $form.serialize(), 
+      success: function(response) {
+        location.href.replace('https://sundae.com/get-offer/contact-details/?unbounce_guid=' + guid);
+      }
+    });
   }
 });
 
