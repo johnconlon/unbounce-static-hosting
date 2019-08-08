@@ -20,7 +20,8 @@ function submit(form) {
   form.dispatchEvent(event)
 }
 
-$(function(){
+// Use load event to get the form populated by unbounce
+$(window).on('load', function (){
   // Generate a GUID that we'll use to identify this lead in Salesforce for step 2 (contact info).
   // We'll use a Zap to locate the newly created lead in order to update it with the contact info in
   // the second page which is a different form altogether.
@@ -45,13 +46,7 @@ $(function(){
     params = {
       'lp-form-submit-method': 'ajax',
       'variant': 'u',
-      'pageId': $form.find('input[name=pageId]').val(),
-      'zip_code': $form.find('input[name=zip_code]').val(),
-      'unbounce_guid': guid,
-      'autocomplete_address': $form.find('input[name=autocomplete_address]').val(),
-      'in_region': $form.find('input[name=in_region]').val(),
-      'city': $form.find('input[name=city]').val(),
-      'state': $form.find('input[name=state]').val() 
+      'pageId': $form.find('input[name=pageId]').val()
     };
     
     $.ajax({
@@ -64,5 +59,4 @@ $(function(){
     });
   }
 });
-
-})()
+})();
