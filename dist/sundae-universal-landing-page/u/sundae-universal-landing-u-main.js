@@ -31,6 +31,7 @@ $(function(){
   var zipCode = qs('zip_code');
   var isInRegion = false;
   var $form = $('.lp-pom-form form');
+  var params;
   
   $('#unbounce_guid').val(guid);
   
@@ -40,9 +41,22 @@ $(function(){
     isInRegion = zipsInRegion.indexOf(zipCode) > -1;
     
     $('#in_region').val(isInRegion);
+    
+    params = {
+      'lp-form-submit-method': 'ajax',
+      'variant': 'u',
+      'pageId': $form.find('input[name=pageId]').val(),
+      'zip_code': $form.find('input[name=zip_code]').val(),
+      'unbounce_guid': guid,
+      'autocomplete_address': $form.find('input[name=autocomplete_address]').val(),
+      'in_region': $form.find('input[name=in_region]').val(),
+      'city': $form.find('input[name=city]').val(),
+      'state': $form.find('input[name=state]').val() 
+    };
+    
     $.ajax({
       type: 'POST',
-      url: 'https://sundae.com/fsg?lp-form-submit-method=ajax&pageId=' + $form.find('input[name=pageId]').val() + '&variant=u',
+      url: 'https://sundae.com/fsg?' + $.param(params),
       data: $form.serialize(), 
       success: function(response) {
         location.replace('https://sundae.com/get-offer/contact-details/?unbounce_guid=' + guid);
