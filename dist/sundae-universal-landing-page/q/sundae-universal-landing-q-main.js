@@ -46,8 +46,6 @@
     }
     
     function handleInputChange(e) {
-      console.log('input change');
-      
       isPlaceSelected = false;
       
       if ($errorMsg) {
@@ -57,15 +55,12 @@
     }
     
     function handlePlaceChange() {
-      console.log('place change');
-      
       isPlaceSelected = true;
       
       if ($errorMsg) {
         $errorMsg.remove();
         $errorMsg = null;
       }
-      console.log('here');
     }
     
     $('#unbounce_guid').val(guid);
