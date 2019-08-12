@@ -1,21 +1,77 @@
 (function() {
-const componentForm = {
-    street_number: 'short_name',
-    route: 'long_name',
-    locality: 'long_name',
-    administrative_area_level_1: 'long_name',
-    country: 'long_name',
-    postal_code: 'short_name'
-};
+  const componentForm = {
+      street_number: 'short_name',
+      route: 'long_name',
+      locality: 'long_name',
+      administrative_area_level_1: 'long_name',
+      country: 'long_name',
+      postal_code: 'short_name'
+  };
+
+  function initSmoothScrolling($) {
+    // The speed of the scroll in milliseconds
+    var speed = 400;
    
-jQuery(document).ready(function($) {
+    // Find links that are #anchors and scroll to them
+    $('a[href^=\\#]')
+      .not('.lp-pom-form .lp-pom-button')
+      .unbind('click.smoothScroll')
+      .bind('click.smoothScroll', function(event) {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: $( $(this).attr('href') ).offset().top }, speed);
+      });
+  }
+   
+  jQuery(document).ready(function($) {
     // Generate a GUID that we'll use to identify this lead in Salesforce for step 2 (contact info).
     // We'll use a Zap to locate the newly created lead in order to update it with the contact info in
     // the second page which is a different form altogether.
     // Salesforce also requires that we set a lastname value, so we'll use it as a placeholder too
     const guid = uuidv4();
     const guidParts = guid.split('-');
+    
+    let isPlaceSelected = false;
+    let $errorMsg = null;
+    
+    function handleSubmit(e) {
+      if (!isPlaceSelected) {
+        if (!$errorMsg) {
+          $errorMsg = $('<div class="address-error-msg">Please select an address from the dropdown that appears as you start typing. Try entering without zip codes or unit numbers if you don\'t see your address.</div>');
+          $errorMsg.insertAfter('#autocomplete_address');
+        }
+        
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+    
+    function handleInputChange(e) {
+      console.log('input change');
+      
+      isPlaceSelected = false;
+      
+      if ($errorMsg) {
+        $errorMsg.remove();
+        $errorMsg = null;
+      }
+    }
+    
+    function handlePlaceChange() {
+      console.log('place change');
+      
+      isPlaceSelected = true;
+      
+      if ($errorMsg) {
+        $errorMsg.remove();
+        $errorMsg = null;
+      }
+      console.log('here');
+    }
+    
     $('#unbounce_guid').val(guid);
+    $('#autocomplete_address').attr('autocomplete', false);
+    
+    $('#autocomplete_address').on('change', handleInputChange);
    
     // Setup autocomplete for any forms on the page
     $('form').each(function(i, form) {
@@ -30,7 +86,9 @@ jQuery(document).ready(function($) {
       autocomplete.addListener('place_changed', function() {
         const place = autocomplete.getPlace();
 
-        if (!Array.isArray(place.address_components)) {
+        if (Array.isArray(place.address_components)) {
+          handlePlaceChange();
+        } else {
           console.warn('place.address_components is not an Array. Will not process autosuggested address.');
           return;
         }
@@ -50,21 +108,10 @@ jQuery(document).ready(function($) {
         $('#in_region').val(isInRegion);
       });
     });
-   });
-   
-   
-   // smooth scrolling
-   $(function($) {
-    // The speed of the scroll in milliseconds
-    var speed = 400;
-   
-    // Find links that are #anchors and scroll to them
-    $('a[href^=\\#]')
-      .not('.lp-pom-form .lp-pom-button')
-      .unbind('click.smoothScroll')
-      .bind('click.smoothScroll', function(event) {
-        event.preventDefault();
-        $('html, body').animate({ scrollTop: $( $(this).attr('href') ).offset().top }, speed);
-      });
-   });
+    
+    $('form button[type=submit]').on('click tap touchstart', handleSubmit);
+    
+    initSmoothScrolling($);
+    
+  });
 })()
