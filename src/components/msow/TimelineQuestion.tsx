@@ -6,18 +6,16 @@ export interface Props {
 }
 
 export const OPTIONS = {
-  Yesterday: "Yesterday",
-  "1-3 months": "1-3 months",
-  "3-6 months": "3-6 months",
-  "6-12 months": "6-12 months",
-  "12+ months": "12+ months"
+  "In the next 60 days": "In the next 60 days",
+  "2 - 4 months": "2 - 4 months",
+  "4 months or more": "4 months or more"
 };
 
 export default function TimelineQuestion(props: Props) {
   return (
     <RadioQuestion
       name="timeline"
-      label="What is your timeline to sell?"
+      label="When would you like to sell and be out of the house? (Choose one)"
       options={OPTIONS}
       onChange={props.onChange}
       required
