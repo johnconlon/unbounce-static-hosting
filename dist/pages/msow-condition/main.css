@@ -95,17 +95,21 @@
   margin-top: 20px;
 }
 
-.MultiCheckboxQuestion {
-    
+.RadioQuestion {
 }
 
-.MultiCheckboxQuestion-checkbox {
-    padding: 5px 0;
+.RadioQuestion-radio {
+  padding: 5px 0;
 }
 
-.MultiCheckboxQuestion-checkboxInput {
-    margin-right: 10px;
+.RadioQuestion-radio input {
+  margin-right: 10px;
 }
+
+.RadioQuestion-radio label {
+  cursor: pointer;
+}
+
 .ConditionQuestion {
     
 }

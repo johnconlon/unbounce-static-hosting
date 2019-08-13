@@ -1,5 +1,5 @@
 import { h, Component } from "preact";
-import MultiCheckboxQuestion from "../MultiCheckboxQuestion";
+import RadioQuestion from "../RadioQuestion";
 import "./ConditionQuestion.css";
 
 export interface Props {
@@ -8,21 +8,19 @@ export interface Props {
 
 export const LABEL = "Have you updated or remodeled any of the following in the last 10 years? (check all that apply)";
 export const OPTIONS = {
-  renovated_kitchen: "Kitchen",
-  renovated_bathrooms: "Bathrooms",
-  renovated_bedrooms: "Bedrooms",
-  renovated_roof: "Roof",
-  renovated_flooring: "Flooring",
-  renovated_paint: "Paint",
-  renovated_landscaping: "Landscaping"
+  "Recently updated": "Low",
+  "No recent updates": "Medium",
+  "Never updated or needs repairs": "High"
 };
 
 export default function ListingQuestion(props: Props) {
   return (
-    <MultiCheckboxQuestion
-      label={LABEL}
+    <RadioQuestion
+      name="condition"
+      label="When would you like to sell and be out of the house? (Choose one)"
       options={OPTIONS}
       onChange={props.onChange}
+      required
     />
   );
 }
