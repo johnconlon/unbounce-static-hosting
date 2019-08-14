@@ -95,21 +95,6 @@
   margin-top: 20px;
 }
 
-.RadioQuestion {
-}
-
-.RadioQuestion-radio {
-  padding: 5px 0;
-}
-
-.RadioQuestion-radio input {
-  margin-right: 10px;
-}
-
-.RadioQuestion-radio label {
-  cursor: pointer;
-}
-
 .ConditionQuestion {
     
 }
