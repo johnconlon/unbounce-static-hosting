@@ -10,7 +10,7 @@ export const INPUT_NAME = "reason";
 export const OPTIONS = {
   "I'm relocating/downsizing": "Relocating / downsizing",
   "I inherited the house": "Inherited a house",
-  "Financial or other life events": "Financial or other life event",
+  "Financial or other life event": "Financial or other life event",
   "Offloading a rental property": "Offloading a rental property",
   "Just curious / good time to sell": "Just curious / good time to sell",
   "Other": "Other"
