@@ -22,7 +22,11 @@ function qs(key: string) {
 }
 
 if (Unbounce.isUnbounce()) {
-  console.log(qs('in_region'));
+  if (qs('in_region') == 'true') {
+    window.module.lp.form.data.url = QUALIFIED_LEAD_THANK_YOU_PAGE;
+  } else {
+    window.module.lp.form.data.url = NON_QUALIFIED_LEAD_THANK_YOU_PAGE;
+  }
   
   Unbounce.init(
     "dynamic-root",
