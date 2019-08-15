@@ -42,7 +42,7 @@ export default function ConditionQuestion(props: Props) {
               {obj.description}
             </div>
             <div class="order-sm-1 ConditionQuestion-photoContainer">
-              <img class="" src={`${obj.photo_prefix}.jpg`} />
+              <img class="" src={`${obj.photo_prefix}-1024.jpg`} />
             </div>
           </label>
         </div>
