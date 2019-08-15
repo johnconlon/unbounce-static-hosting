@@ -8,7 +8,7 @@ export interface Props {
 
 export default function ConditionQuestion(props: Props) {
   const name = 'scope_of_work';
-  const label = 'Sundae buys houses that need some love (repairs and renovations). Which of the following best describes the current condition of your property?  (Choose one)';
+  const label = 'Which of the following best describes the current condition of your property?  (Choose one)';
   
   const options = [{
     value: "Low",
