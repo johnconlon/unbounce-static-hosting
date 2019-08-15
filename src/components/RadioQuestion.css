@@ -11,4 +11,5 @@
 
 .RadioQuestion-radio label {
   cursor: pointer;
+  font-size: 16px;
 }
