@@ -14,7 +14,7 @@
 .QuestionForm-backButton {
   cursor: pointer;
   color: var(--colorGray);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .QuestionForm-forwardButton {

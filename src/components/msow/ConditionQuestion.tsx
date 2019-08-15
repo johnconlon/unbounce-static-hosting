@@ -6,48 +6,44 @@ export interface Props {
   onChange?: JSX.EventHandler<Event>;
 }
 
-export default function ListingQuestion(props: Props) {
+export default function ConditionQuestion(props: Props) {
   const name = 'scope_of_work';
   const label = 'Sundae buys houses that need some love (repairs and renovations). Which of the following best describes the current condition of your property?  (Choose one)';
   
   const options = [{
     value: "Low",
     description: "Recently updated",
-    photo_urls: [
-      ]
+    photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/low'
   }, {
     value: "Medium",
     description: "No recent updates",
-    photo_urls: [
-      ]
+    photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/med'
   }, {
     value: "High",
     description: "Never updated or needs repairs",
-    photo_urls: [
-      ]
+    photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/high'
   }];
-    //   <RadioQuestion
-    //   name="scope_of_work"
-    //   label="Sundae buys houses that need some love (repairs and renovations). Which of the following best describes the current condition of your property?  (Choose one)"
-    //   options={OPTIONS}
-    //   onChange={props.onChange}
-    //   required
-    // />
   
   return (
     <Question label={label}>
       {options.map(obj => (
-        <div class="RadioQuestion-radio">
-          <input
-            type="radio"
-            name={name}
-            value={obj.value}
-            id={`${name}-${obj.value}`}
-            required={true}
-          />
-          <label for={`${name}-${obj.value}`}>
-            <img src="https://sundae.com/wp-content/uploads/2019/02/landing@2x.png" />
-            {obj.description}
+        <div class="ConditionQuestion-radio">
+          <label class="d-sm-flex" for={`${name}-${obj.value}`}>
+            <div class="ConditionQuestion-radioBtn d-inline d-sm-block order-0 align-self-center">
+              <input
+                type="radio"
+                name={name}
+                value={obj.value}
+                id={`${name}-${obj.value}`}
+                required={true}
+              />
+            </div>
+            <div class="d-inline d-sm-block order-sm-2 align-self-center ConditionQuestion-description">
+              {obj.description}
+            </div>
+            <div class="order-sm-1 ConditionQuestion-photoContainer">
+              <img class="" src={`${obj.photo_prefix}.jpg`} />
+            </div>
           </label>
         </div>
       ))}
