@@ -11,7 +11,19 @@ import "normalize.css";
 import "sundaelib/css/reset.css";
 import "sundaelib/css/theme.css";
 
+const QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you/';
+const NON_QUALIFIED_LEAD_THANK_YOU_PAGE = 'https://sundae.com/thank-you-nql/';
+
+function qs(key: string) {
+  key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+  var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+  
+  return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+}
+
 if (Unbounce.isUnbounce()) {
+  console.log(qs('in_region'));
+  
   Unbounce.init(
     "dynamic-root",
     (container: Element, unbounceForm: Unbounce.UnbounceForm) => {
