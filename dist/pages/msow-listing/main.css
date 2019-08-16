@@ -105,6 +105,7 @@
     padding: 15px 0;
     margin-top: 0;
     border-top: none;
+    background-color: #fafafa;
   }
 }
 .Question-label {
@@ -185,6 +186,7 @@ html {
   font-size: 14px;
   color: #3a3a3a;
   color: var(--colorFont);
+  background-color: #fafafa;
 }
 
 #dynamic-root {
