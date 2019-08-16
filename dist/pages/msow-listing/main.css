@@ -87,6 +87,10 @@
     margin-top: 5px;
   }
   
+  .QuestionForm-question {
+    margin-bottom: 85px;
+  }
+  
   .QuestionForm-navigationContainer {
     position: fixed;
     bottom: 0;
