@@ -7,3 +7,9 @@
   background-color: #fff;
   border-radius: 5px;
 }
+
+@media (max-width: 600px) {
+  .Section--block {
+    background-color: #fafafa;
+  }
+}
