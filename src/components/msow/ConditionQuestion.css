@@ -10,18 +10,38 @@
 }
 
 .ConditionQuestion-photoContainer {
-  padding-top: 5px;
+  margin-top: 5px;
+  width: 290px;
+  height: 161.11px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
 .ConditionQuestion-photoContainer img {
-  width: 290px;
-  height: 193.33px;
-  border-radius: 6px;
+  width: 100%;
 }
 
 .ConditionQuestion-description {
   font-weight: bold;
   font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .ConditionQuestion-photo--low {
+    position: relative;
+    bottom: 16px;
+  }
+  
+  .ConditionQuestion-photo--med {
+    position: relative;
+    bottom: 32px;
+  }
+  
+  .ConditionQuestion-photo--high {
+    position: relative;
+    bottom: 56px;
+  }
 }
 
 @media (min-width: 600px) {
@@ -30,18 +50,15 @@
   }
   
   .ConditionQuestion-photoContainer {
-    padding-right: 20px;
-    padding-top: 0;
-  }
-  
-  .ConditionQuestion-photoContainer img {
+    margin-right: 20px;
+    margin-top: 0;
     width: 200px;
     height: 133.33px;
-    border-radius: 6px;
   }
   
   .ConditionQuestion-description {
     font-weight: normal;
+    font-size: 16px;
   }
 }
 

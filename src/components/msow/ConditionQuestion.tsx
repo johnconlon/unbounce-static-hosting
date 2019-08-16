@@ -11,14 +11,17 @@ export default function ConditionQuestion(props: Props) {
   const label = 'Which of the following best describes the current condition of your property?  (Choose one)';
   
   const options = [{
+    key: "low",
     value: "Low",
     description: "Recently updated",
     photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/low'
   }, {
+    key: "med",
     value: "Medium",
     description: "No recent updates",
     photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/med'
   }, {
+    key: "high",
     value: "High",
     description: "Never updated or needs repairs",
     photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/high'
@@ -42,7 +45,7 @@ export default function ConditionQuestion(props: Props) {
               {obj.description}
             </div>
             <div class="order-sm-1 ConditionQuestion-photoContainer">
-              <img class="" src={`${obj.photo_prefix}-1024.jpg`} />
+              <img class={`ConditionQuestion-photo--${obj.key}`} src={`${obj.photo_prefix}-1024.jpg`} />
             </div>
           </label>
         </div>
