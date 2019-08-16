@@ -94,7 +94,7 @@
   .QuestionForm-navigationContainer {
     position: fixed;
     bottom: 0;
-    width: 320px;
+    width: 290px;
     padding: 15px 0;
     margin-top: 0;
   }
@@ -126,8 +126,8 @@
 }
 
 .ConditionQuestion-photoContainer img {
-  width: 293px;
-  height: 195.33px;
+  width: 290px;
+  height: 193.33px;
   border-radius: 6px;
 }
 
