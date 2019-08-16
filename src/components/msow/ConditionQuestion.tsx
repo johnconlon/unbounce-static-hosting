@@ -11,20 +11,20 @@ export default function ConditionQuestion(props: Props) {
   const label = 'Which of the following best describes the current condition of your property?  (Choose one)';
   
   const options = [{
-    key: "low",
-    value: "Low",
-    description: "Recently updated",
-    photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/low'
+    key: "high",
+    value: "High",
+    description: "Never updated or needs repairs",
+    photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/high'
   }, {
     key: "med",
     value: "Medium",
     description: "No recent updates",
     photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/med'
   }, {
-    key: "high",
-    value: "High",
-    description: "Never updated or needs repairs",
-    photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/high'
+    key: "low",
+    value: "Low",
+    description: "Recently updated",
+    photo_prefix: 'https://sundae-web-assets.s3-us-west-2.amazonaws.com/unbounce/msow-scope-of-work/low'
   }];
   
   return (
