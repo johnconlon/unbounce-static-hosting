@@ -12,6 +12,7 @@
   cursor: pointer;
   padding: 12px 8px;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .Button:hover {
