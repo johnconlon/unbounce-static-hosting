@@ -1,4 +1,6 @@
 (function() {
+const MSOW_FIRST_PAGE = 'http://sundae.com/get-offer/details/timeline/';
+
 // Ensure the referrer field is fewer than 255 characters to not break a backend
 // integration.
 function trimReferrer(args) {
@@ -23,6 +25,7 @@ lp.jQuery(function ($) {
 });
 
 lp.jQuery(document).ready(function ($) {
+  window.module.lp.form.data.url = MSOW_FIRST_PAGE;
   window.ub.hooks.beforeFormSubmit.push(trimReferrer)
 });
 })()
