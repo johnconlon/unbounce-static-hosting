@@ -43,7 +43,7 @@ export default class OtherRadioQuestion extends Component<Props, State> {
             name={otherFieldName(props.name)}
             placeholder={props.otherPlaceholder}
             class="OtherRadioQuestion-otherInput"
-            required={state.showingOtherField}
+            required={false}
           />
         </div>
       </div>
