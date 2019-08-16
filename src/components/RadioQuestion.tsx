@@ -15,15 +15,17 @@ export default function RadioQuestion(props: Props) {
     <Question label={props.label}>
       {Object.entries(props.options).map(([label, value]) => (
         <div class="RadioQuestion-radio">
-          <input
-            type="radio"
-            name={props.name}
-            value={value}
-            id={`${props.name}-${value}`}
-            onChange={props.onChange}
-            required={props.required}
-          />
-          <label for={`${props.name}-${value}`}>{label}</label>
+          <label>
+            <input
+              type="radio"
+              name={props.name}
+              value={value}
+              id={`${props.name}-${value}`}
+              onChange={props.onChange}
+              required={props.required}
+            />
+            {label}
+          </label>
         </div>
       ))}
     </Question>
