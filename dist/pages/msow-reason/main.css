@@ -109,21 +109,14 @@
   }
 }
 .Question-label {
-  font-size: 16px;
-  line-height: 1.25;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .Question-input {
   margin-top: 40px;
   font-size: 16px;
   line-height: 1.25;
-}
-
-@media (max-width: 600px) {
-  .Question-label {
-    font-size: 18px;
-    line-height: 1.5;
-  }
 }
 .RadioQuestion {
 }
@@ -138,7 +131,7 @@
 
 .RadioQuestion-radio label {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 @media (max-width: 600px) {
@@ -150,7 +143,6 @@
   .RadioQuestion-radio label {
     padding: 7px 0;
     display: block;
-    font-size: 18px;
   }
 }
 .TextInput {
