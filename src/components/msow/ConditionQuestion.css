@@ -44,15 +44,21 @@
   }
   
   .ConditionQuestion-photo--low {
-    right: 29px;
+    right: 56px;
+    height: 120%;
+    bottom: 13px;
   }
   
   .ConditionQuestion-photo--med {
-    right: 29px;
+    right: 43px;
+    height: 120%;
+    bottom: 23px;
   }
   
   .ConditionQuestion-photo--high {
-    right: 19px;
+    right: 0;
+    height: 120%;
+    bottom: 23px;
   }
 }
 
