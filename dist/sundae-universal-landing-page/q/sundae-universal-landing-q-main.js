@@ -63,6 +63,7 @@
       }
     }
     
+    $('#ublp_variant').val($('.lp-pom-form form input[name=pageVariant]').val());
     $('#unbounce_guid').val(guid);
     $('#autocomplete_address').attr('autocomplete', false);
     
