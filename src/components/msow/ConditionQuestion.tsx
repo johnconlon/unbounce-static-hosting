@@ -31,8 +31,8 @@ export default function ConditionQuestion(props: Props) {
     <Question label={label}>
       {options.map(obj => (
         <div class="ConditionQuestion-radio">
-          <label class="d-sm-flex" for={`${name}-${obj.value}`}>
-            <div class="ConditionQuestion-radioBtn d-inline d-sm-block order-0 align-self-center">
+          <label class="d-flex" for={`${name}-${obj.value}`}>
+            <div class="ConditionQuestion-radioBtn align-self-center">
               <input
                 type="radio"
                 name={name}
@@ -41,11 +41,11 @@ export default function ConditionQuestion(props: Props) {
                 required={true}
               />
             </div>
-            <div class="d-inline d-sm-block order-sm-2 align-self-center ConditionQuestion-description">
-              {obj.description}
+            <div class="ConditionQuestion-photoContainer flex-shrink-0">
+              <img class={`ConditionQuestion-photo ConditionQuestion-photo--${obj.key}`} src={`${obj.photo_prefix}-1024.jpg`} />
             </div>
-            <div class="order-sm-1 ConditionQuestion-photoContainer">
-              <img class={`ConditionQuestion-photo--${obj.key}`} src={`${obj.photo_prefix}-1024.jpg`} />
+            <div class="align-self-center ConditionQuestion-description">
+              {obj.description}
             </div>
           </label>
         </div>

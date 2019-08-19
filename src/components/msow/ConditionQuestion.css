@@ -5,21 +5,13 @@
   padding-bottom: 20px;
 }
 
-.ConditionQuestion-radioBtn {
-  padding-right: 15px;
-}
-
 .ConditionQuestion-photoContainer {
   margin-top: 5px;
-  width: 290px;
-  height: 161.11px;
+  width: 116px;
+  height: 116px;
   position: relative;
   overflow: hidden;
   border-radius: 6px;
-}
-
-.ConditionQuestion-photoContainer img {
-  width: 100%;
 }
 
 .ConditionQuestion-description {
@@ -28,19 +20,35 @@
 }
 
 @media (max-width: 600px) {
+  .ConditionQuestion-radio:not(:last-child) {
+    padding-bottom: 10px;
+  }
+  
+  .ConditionQuestion-radioBtn {
+    padding-right: 10px;
+  }
+  
+  .ConditionQuestion-photoContainer {
+    margin-right: 10px;
+  }
+  
+  .ConditionQuestion-photo {
+    height: 100%;
+  }
+  
   .ConditionQuestion-photo--low {
     position: relative;
-    bottom: 16px;
+    /*bottom: 16px;*/
   }
   
   .ConditionQuestion-photo--med {
     position: relative;
-    bottom: 32px;
+    /*bottom: 32px;*/
   }
   
   .ConditionQuestion-photo--high {
     position: relative;
-    bottom: 56px;
+    /*bottom: 56px;*/
   }
 }
 
@@ -54,6 +62,10 @@
     margin-top: 0;
     width: 200px;
     height: 133.33px;
+  }
+  
+  .ConditionQuestion-photo {
+    width: 100%;
   }
   
   .ConditionQuestion-description {
