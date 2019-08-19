@@ -138,6 +138,10 @@
   font-size: 18px;
 }
 
+.ConditionQuestion-photo {
+  position: relative;
+}
+
 @media (max-width: 600px) {
   .Question-input {
     margin-top: 20px;
@@ -160,18 +164,15 @@
   }
   
   .ConditionQuestion-photo--low {
-    position: relative;
-    /*bottom: 16px;*/
+    right: 29px;
   }
   
   .ConditionQuestion-photo--med {
-    position: relative;
-    /*bottom: 32px;*/
+    right: 29px;
   }
   
   .ConditionQuestion-photo--high {
-    position: relative;
-    /*bottom: 56px;*/
+    right: 19px;
   }
 }
 
@@ -189,6 +190,10 @@
   
   .ConditionQuestion-photo {
     width: 100%;
+  }
+  
+  .ConditionQuestion-photo--high {
+    bottom: 17px;
   }
 }
 
