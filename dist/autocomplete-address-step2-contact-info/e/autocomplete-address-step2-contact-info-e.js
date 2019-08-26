@@ -27,5 +27,10 @@ lp.jQuery(function ($) {
 lp.jQuery(document).ready(function ($) {
   window.module.lp.form.data.url = MSOW_FIRST_PAGE;
   window.ub.hooks.beforeFormSubmit.push(trimReferrer)
+  
+  $('#address_copy').val($('#address').val());
+  $('#city_copy').val($('#city').val());
+  $('#state_copy').val($('#state').val());
+  $('#zip_code_copy').val($('#zip_code').val());
 });
 })()
