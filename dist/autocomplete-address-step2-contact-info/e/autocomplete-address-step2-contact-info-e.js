@@ -27,7 +27,9 @@ lp.jQuery(function ($) {
 lp.jQuery(document).ready(function ($) {
   window.module.lp.form.data.url = MSOW_FIRST_PAGE;
   window.ub.hooks.beforeFormSubmit.push(trimReferrer)
-  
+});
+
+lp.jQuery(window).on('load', function(e) { 
   $('#address_copy').val($('#address').val());
   $('#city_copy').val($('#city').val());
   $('#state_copy').val($('#state').val());
