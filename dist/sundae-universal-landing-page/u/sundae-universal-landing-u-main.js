@@ -58,6 +58,10 @@ $(window).on('load', function (){
       'city': $form.find('input[name=city]').val(),
       'state': $form.find('input[name=state]').val(),
       'zip_code': $form.find('input[name=zip_code]').val(),
+      'address_copy': $form.find('input[name=address_copy]').val(),
+      'city_copy': $form.find('input[name=city_copy]').val(),
+      'state_copy': $form.find('input[name=state_copy]').val(),
+      'zip_code_copy': $form.find('input[name=zip_code_copy]').val(),
       'in_region': $form.find('input[name=in_region]').val()
     };
     
