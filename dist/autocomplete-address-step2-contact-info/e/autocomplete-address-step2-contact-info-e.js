@@ -29,7 +29,7 @@ lp.jQuery(document).ready(function ($) {
   window.ub.hooks.beforeFormSubmit.push(trimReferrer)
 });
 
-lp.jQuery(window).on('load', function(e) { 
+lp.jQuery(window).load(function (e) { 
   $('#address_copy').val($('#address').val());
   $('#city_copy').val($('#city').val());
   $('#state_copy').val($('#state').val());
