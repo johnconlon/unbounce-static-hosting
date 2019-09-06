@@ -64,7 +64,7 @@ $(window).on('load', function (){
     'state_copy': $form.find('input[name=state]').val(),
     'zip_code_copy': $form.find('input[name=zip_code]').val(),
     'in_region': $form.find('input[name=in_region]').val(),
-    'ublp_variant': $form.find('input[name=ublp_variant').val()
+    'ublp_variant': $form.find('input[name=ublp_variant]').val()
   };
   
   $.ajax({
