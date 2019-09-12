@@ -5,3 +5,15 @@
   margin: 0 auto;
   padding-left: 0 !important;
 }
+
+#content {
+  margin-top: 40px;
+}
+
+#application {
+  margin-top: 40px;
+}
+
+a {
+  color: #DC3858;
+}
