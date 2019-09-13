@@ -56,3 +56,7 @@ a:hover {
 .required-fields {
   font-weight: bold;
 }
+
+#main {
+  padding-bottom: 20px !important;
+}
