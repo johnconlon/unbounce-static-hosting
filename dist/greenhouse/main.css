@@ -17,6 +17,8 @@ a:hover {
 
 #content {
   margin-top: 40px;
+  font-size: 16px;
+  line-height: 1.6em;
 }
 
 #application {
@@ -24,6 +26,7 @@ a:hover {
 }
 
 #application #submit_app, #header #apply_button {
+  font-family: 'Lato', sans-serif;
   cursor: pointer;
   display: inline-block;
   border-radius: 4px;
@@ -58,6 +61,5 @@ a:hover {
 }
 
 #main {
-  /*TODO: Uncomment*/
-  /*padding-bottom: 0 !important;*/
+  padding-bottom: 0 !important;
 }
