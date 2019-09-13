@@ -16,4 +16,31 @@
 
 a {
   color: #DC3858;
+  text-decoration: none;
+}
+
+#submit_app {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: nowrap;
+  background-color: white;
+  font-size: 14px;
+  background: #DC3858;
+  color: #fafafa;
+  border-color: #DC3858;
+  text-shadow: none;
+}
+
+#submit_app:hover {
+  background: #bf2240; 
 }
