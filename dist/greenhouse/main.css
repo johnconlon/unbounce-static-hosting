@@ -3,6 +3,7 @@
 a {
   color: #DC3858;
   text-decoration: none;
+  font-weight: bold;
 }
 
 #app_body {
@@ -43,4 +44,12 @@ a {
 
 #application #submit_app:hover, #header #apply_button:hover {
   background: #bf2240; 
+}
+
+#application label {
+  font-weight: bold;
+}
+
+.required-fields {
+  font-weight: bold;
 }
