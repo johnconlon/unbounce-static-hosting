@@ -19,7 +19,7 @@ a {
   margin-top: 40px;
 }
 
-#application #submit_app {
+#application #submit_app, #header #apply_button {
   cursor: pointer;
   display: inline-block;
   border-radius: 4px;
@@ -41,6 +41,6 @@ a {
   text-shadow: none;
 }
 
-#application #submit_app:hover {
+#application #submit_app:hover, #header #apply_button:hover {
   background: #bf2240; 
 }
