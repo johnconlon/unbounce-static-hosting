@@ -69,10 +69,13 @@ $(window).on('load', function (){
   
   $.ajax({
     type: 'POST',
-    url: 'https://sundae.com/fsg?' + $.param(params),
+    url: '/fsg?' + $.param(params),
     data: $form.serialize(), 
     success: function(response) {
       location.replace('https://sundae.com/get-offer/contact-details/?' + $.param(redirectParams));
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      location.replace('https://sundae.com/get-offer-ublp/');
     }
   });
 });
