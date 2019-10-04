@@ -48,7 +48,7 @@ $(window).on('load', function (){
   
   params = {
     'lp-form-submit-method': 'ajax',
-    'variant': 'u',
+    'variant': $form.find('input[name=pageVariant]').val(),
     'pageId': $form.find('input[name=pageId]').val()
   };
   
