@@ -4,7 +4,7 @@
 // ref: https://docs.google.com/document/d/1x2DoUJ2iBD-ZdfztBDaFt-f7_fTQG4HhXHFYETjGE-M
 
 
-var zipsInRegion = [
+const zipsInRegion = [
 // San Diego
 91902,91910,91911,91913,
 91914,91915,91932,91941,
