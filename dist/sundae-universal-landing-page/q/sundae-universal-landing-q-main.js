@@ -31,12 +31,25 @@
     const guidParts = guid.split('-');
     
     let isPlaceSelected = false;
+    let isStreetNumberEntered = false;
     let $errorMsg = null;
     
     function handleSubmit(e) {
-      if (!isPlaceSelected) {
-        if (!$errorMsg) {
-          $errorMsg = $('<div class="address-error-msg">Please select an address from the dropdown that appears as you start typing. Try entering without zip codes or unit numbers if you don\'t see your address.</div>');
+      let message = '';
+      
+      if (isPlaceSelected) {
+        if (!isStreetNumberEntered) {
+          message = 'Please enter full street address.';
+        }
+      } else {
+        message = 'Please select an address from the dropdown that appears as you start typing. Try entering without zip codes or unit numbers if you don\'t see your address.';
+      }
+      
+      if (message) {
+        if ($errorMsg) {
+          $errorMsg.text(message);
+        } else {
+          $errorMsg = $('<div class="address-error-msg">' + message +'</div>');
           $errorMsg.insertAfter('#autocomplete_address');
         }
         
@@ -47,6 +60,7 @@
     
     function handleInputChange(e) {
       isPlaceSelected = false;
+      isStreetNumberEntered = false;
       
       if ($errorMsg) {
         $errorMsg.remove();
@@ -54,8 +68,9 @@
       }
     }
     
-    function handlePlaceChange() {
+    function handlePlaceChange(streetNumber) {
       isPlaceSelected = true;
+      isStreetNumberEntered = !!streetNumber;
       
       if ($errorMsg) {
         $errorMsg.remove();
@@ -73,7 +88,7 @@
     $('form').each(function(i, form) {
       const addressField = form.autocomplete_address;
       const autocomplete = new google.maps.places.Autocomplete(addressField, {
-        types: ['geocode'],
+        types: ['address'],
       });
    
       // get address components
@@ -83,16 +98,16 @@
         const place = autocomplete.getPlace();
 
         if (Array.isArray(place.address_components)) {
-          handlePlaceChange();
+          place.address_components.forEach(function(component) {
+            const type = component.types[0];
+            addresses[type] = component[componentForm[type]] || "";
+          });
+          
+          handlePlaceChange(addresses.street_number);
         } else {
           console.warn('place.address_components is not an Array. Will not process autosuggested address.');
           return;
         }
-    
-        place.address_components.forEach(function(component) {
-          const type = component.types[0];
-          addresses[type] = component[componentForm[type]] || "";
-        });
    
         form.address.value = (addresses.street_number || "") + " " + (addresses.route || "");
         form.city.value = addresses.locality || "";
